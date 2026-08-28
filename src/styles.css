@@ -102,14 +102,15 @@ button {
   width: 100%;
   z-index: 1000;
   padding: 22px 0;
+  background: var(--black);
   transition: 0.3s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(245, 244, 240, 0.94);
+  background: rgba(21, 21, 21, 0.96);
   backdrop-filter: blur(18px);
   padding: 15px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-inner {
@@ -169,6 +170,18 @@ button {
   margin-top: 3px;
 }
 
+.navbar .brand-wordmark strong {
+  color: white;
+}
+
+.navbar .brand-wordmark .brand-country {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar .brand-wordmark .brand-suffix {
+  color: rgba(255, 255, 255, 0.35);
+}
+
 .desktop-nav {
   display: flex;
   gap: 38px;
@@ -179,7 +192,7 @@ button {
 .desktop-nav a {
   font-size: 13px;
   font-weight: 600;
-  color: #4e4c47;
+  color: rgba(255, 255, 255, 0.75);
   transition: 0.2s;
 }
 
@@ -215,12 +228,27 @@ button {
   border-color: var(--black);
 }
 
+.nav-inner .lang-switch .lang-btn {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.nav-inner .lang-switch .lang-btn:hover {
+  border-color: white;
+}
+
+.nav-inner .lang-switch .lang-btn.active {
+  background: white;
+  color: var(--black);
+  border-color: white;
+}
+
 .lang-switch-mobile {
   display: none;
 }
 
 .nav-button {
-  background: var(--black);
+  background: var(--red);
   color: white;
   padding: 14px 20px;
   font-size: 12px;
@@ -232,7 +260,7 @@ button {
 }
 
 .nav-button:hover {
-  background: var(--red);
+  background: var(--red-dark);
 }
 
 .nav-button span {
@@ -252,7 +280,7 @@ button {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--black);
+  background: white;
   margin: 6px auto;
   transition: 0.25s;
 }
