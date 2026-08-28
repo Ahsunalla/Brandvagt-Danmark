@@ -703,7 +703,8 @@ button {
 
 .icon-hat .hat-vent {
   transform-box: view-box;
-  transform-origin: 24px 14px;
+  transform-origin: 24px 17px;
+  mix-blend-mode: difference;
   animation: hat-vent-pulse 2s ease-in-out infinite;
 }
 

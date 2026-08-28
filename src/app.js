@@ -175,9 +175,9 @@ const serviceIcons = [
    <span class="flame flame-core"><i></i></span>`,
   `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
      <g class="hat-group">
-       <path d="M9 29 C9 15 16 9 24 9 C32 9 39 15 39 29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-       <path d="M4 29 Q24 35 44 29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-       <circle class="hat-vent" cx="24" cy="14" r="1.8" fill="currentColor"/>
+       <path d="M12 30 C12 16.5 17 9 24 9 C31 9 36 16.5 36 30 Z" fill="currentColor"/>
+       <path d="M5 30.5 C5 28 7.5 26.5 11 26.5 L37 26.5 C40.5 26.5 43 28 43 30.5 C43 34.5 39 36.5 33 36.5 L15 36.5 C9 36.5 5 34.5 5 30.5 Z" fill="currentColor"/>
+       <circle class="hat-vent" cx="24" cy="17" r="2" fill="#fff"/>
      </g>
    </svg>`,
   `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,15 +189,15 @@ const serviceIcons = [
    </svg>`,
   `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
      <rect x="10" y="6" width="28" height="38" rx="1.5" stroke="currentColor" stroke-width="2.2"/>
-     <rect class="win" style="animation-delay:0s" x="15" y="12" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.5s" x="23.5" y="12" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1s" x="32" y="12" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1.5s" x="15" y="21" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.2s" x="23.5" y="21" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1.2s" x="32" y="21" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.8s" x="15" y="30" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1.7s" x="23.5" y="30" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.4s" x="32" y="30" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:0s" x="13.5" y="13.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:.5s" x="21.5" y="13.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1s" x="29.5" y="13.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1.5s" x="13.5" y="22.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:.2s" x="21.5" y="22.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1.2s" x="29.5" y="22.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:.8s" x="13.5" y="31.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1.7s" x="21.5" y="31.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:.4s" x="29.5" y="31.5" width="5" height="5" fill="currentColor"/>
    </svg>`
 ];
 
