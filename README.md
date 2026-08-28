@@ -19,12 +19,12 @@ Because this is a static site, there is no database, backend or paid service.
 
 ## Before going live
 
-Edit `src/app.js` and replace:
-`INDSAET_JERES_EMAIL_HER@EKSEMPEL.DK`
+Edit `src/app.js` and replace the placeholder phone number (`+45 12 34 56 78`) and
+email address (`kontakt@brandvagtdanmark.dk`) — they appear in the contact section
+and in the footer.
 
-with the company's real email address.
-
-Also replace/add the real phone number, company details, legal information and any verified claims you want to publish.
+Also replace/add real company details, legal information and any verified claims
+you want to publish.
 
 ## Brand asset
 
