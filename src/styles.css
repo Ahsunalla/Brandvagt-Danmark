@@ -437,7 +437,7 @@ button {
   width: 24px;
   height: 24px;
   transform: translate(-50%, -50%);
-  color: var(--red);
+  color: var(--black);
 }
 
 .aim-center-dot {
