@@ -42,7 +42,9 @@ app.innerHTML = `
     <main id="top">
 
       <section class="hero">
-        <div class="hero-background">
+        <div class="hero-background"></div>
+
+        <div class="radar" aria-hidden="true">
           <span class="radar-pulse"></span>
           <span class="radar-pulse"></span>
           <span class="radar-pulse"></span>
@@ -175,8 +177,10 @@ app.innerHTML = `
             <article class="service-card featured">
               <div class="card-number">01</div>
 
-              <div class="service-icon">
-                🔥
+              <div class="service-icon icon-flame" aria-hidden="true">
+                <span class="flame flame-back"></span>
+                <span class="flame flame-mid"></span>
+                <span class="flame flame-core"></span>
               </div>
 
               <h3>Brandvagt</h3>
@@ -196,8 +200,18 @@ app.innerHTML = `
             <article class="service-card">
               <div class="card-number">02</div>
 
-              <div class="service-icon">
-                🏗
+              <div class="service-icon icon-crane" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="10" y1="42" x2="10" y2="8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                  <line x1="10" y1="8" x2="40" y2="8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                  <line x1="10" y1="8" x2="4" y2="15" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+                  <line x1="10" y1="15" x2="27" y2="8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.45"/>
+                  <line x1="4" y1="42" x2="44" y2="42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.3"/>
+                  <g class="crane-hook">
+                    <line x1="34" y1="8" x2="34" y2="25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    <rect x="30.5" y="25" width="7" height="6.5" rx="1.5" stroke="currentColor" stroke-width="2"/>
+                  </g>
+                </svg>
               </div>
 
               <h3>Byggepladser</h3>
@@ -217,8 +231,14 @@ app.innerHTML = `
             <article class="service-card">
               <div class="card-number">03</div>
 
-              <div class="service-icon">
-                🎪
+              <div class="service-icon icon-spotlight" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g class="spotlight-beam">
+                    <path d="M24 15 L6 41 L42 41 Z" fill="currentColor" opacity="0.14"/>
+                  </g>
+                  <rect x="17" y="6" width="14" height="10" rx="2.5" stroke="currentColor" stroke-width="2.2"/>
+                  <circle cx="24" cy="16" r="2.4" fill="currentColor"/>
+                </svg>
               </div>
 
               <h3>Events & arrangementer</h3>
@@ -238,8 +258,19 @@ app.innerHTML = `
             <article class="service-card">
               <div class="card-number">04</div>
 
-              <div class="service-icon">
-                🏢
+              <div class="service-icon icon-building" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="6" width="28" height="38" rx="1.5" stroke="currentColor" stroke-width="2.2"/>
+                  <rect class="win" style="animation-delay:0s" x="15" y="12" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:.5s" x="23.5" y="12" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:1s" x="32" y="12" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:1.5s" x="15" y="21" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:.2s" x="23.5" y="21" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:1.2s" x="32" y="21" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:.8s" x="15" y="30" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:1.7s" x="23.5" y="30" width="5" height="5" fill="currentColor"/>
+                  <rect class="win" style="animation-delay:.4s" x="32" y="30" width="5" height="5" fill="currentColor"/>
+                </svg>
               </div>
 
               <h3>Ejendomme & virksomheder</h3>
