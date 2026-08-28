@@ -276,11 +276,14 @@ function render(lang) {
           <span class="radar-dot"></span>
 
           <span class="fire-contact">
-            <span class="icon-flame fire-mini-flame">
-              <span class="flame flame-back"><i></i></span>
-              <span class="flame flame-mid"><i></i></span>
-              <span class="flame flame-core"><i></i></span>
-            </span>
+            <svg class="fire-aim-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="12" y1="1" x2="12" y2="5.5" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="12" y1="18.5" x2="12" y2="23" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="1" y1="12" x2="5.5" y2="12" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="18.5" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.6"/>
+              <circle class="aim-center-dot" cx="12" cy="12" r="1.6" fill="currentColor"/>
+            </svg>
             <span class="fire-corner tl"></span>
             <span class="fire-corner tr"></span>
             <span class="fire-corner bl"></span>

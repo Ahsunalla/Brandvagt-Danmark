@@ -430,12 +430,25 @@ button {
   animation-delay: -1.026s;
 }
 
-.fire-mini-flame {
+.fire-aim-icon {
   position: absolute;
+  top: 50%;
   left: 50%;
-  bottom: 30%;
-  transform: scale(0.45);
-  transform-origin: bottom center;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+}
+
+.aim-center-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: aim-pulse 1s ease-in-out infinite;
+}
+
+@keyframes aim-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.6); }
 }
 
 .fire-corner {
@@ -1337,18 +1350,18 @@ button {
     width: 420px;
     height: 420px;
     right: -135px;
-    top: -115px;
+    top: -30px;
     transform: none;
   }
 
   .fire-contact {
-    top: 66%;
-    left: 47%;
-    animation-delay: -2.282s;
+    top: 39%;
+    left: 62%;
+    animation-delay: 0.113s;
   }
 
   .fire-contact .fire-corner {
-    animation-delay: -2.282s;
+    animation-delay: 0.113s;
   }
 
   .menu-button {
