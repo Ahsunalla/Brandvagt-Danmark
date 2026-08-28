@@ -249,10 +249,10 @@ button {
 
 .radar {
   position: absolute;
-  width: 130px;
-  height: 130px;
-  right: 16%;
-  top: 44%;
+  width: 760px;
+  height: 760px;
+  right: -300px;
+  top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
 }
