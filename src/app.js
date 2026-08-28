@@ -80,7 +80,6 @@ const translations = {
       taglineB: "Tryghed, når det betyder mest.",
       menuLabel: "MENU",
       contactLabel: "KONTAKT",
-      bottomTagline: "Professionel brandvagt i Danmark",
       backToTop: "Til toppen ↑"
     }
   },
@@ -163,7 +162,6 @@ const translations = {
       taglineB: "Safety, when it matters most.",
       menuLabel: "MENU",
       contactLabel: "CONTACT",
-      bottomTagline: "Professional fire watch in Denmark",
       backToTop: "Back to top ↑"
     }
   }
@@ -634,10 +632,6 @@ function render(lang) {
 
         <div class="footer-bottom">
           <span>© ${new Date().getFullYear()} Brandvagt Danmark</span>
-
-          <span>
-            ${t.footer.bottomTagline}
-          </span>
 
           <a href="#top">
             ${t.footer.backToTop}
