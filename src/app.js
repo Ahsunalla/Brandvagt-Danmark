@@ -215,8 +215,15 @@ function render(lang) {
     <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-inner">
-        <a href="#top" class="brand">
-          <img src="/assets/brandvagt-logo.png" alt="Brandvagt Danmark" class="brand-logo" />
+        <a href="#top" class="brand" aria-label="Brandvagt Danmark ApS">
+          <span class="brand-logo">
+            <img src="/assets/brandvagt-shield.png" alt="" class="brand-shield" />
+            <span class="brand-wordmark">
+              <strong>BRANDVAGT</strong>
+              <span class="brand-country">DANMARK</span>
+              <span class="brand-suffix">ApS</span>
+            </span>
+          </span>
         </a>
 
         <nav class="desktop-nav">
@@ -578,9 +585,16 @@ function render(lang) {
 
           <div class="footer-brand">
 
-            <div class="brand">
+            <div class="brand" aria-label="Brandvagt Danmark ApS">
               <div class="footer-logo">
-                <img src="/assets/brandvagt-logo.png" alt="Brandvagt Danmark" class="brand-logo" />
+                <span class="brand-logo">
+                  <img src="/assets/brandvagt-shield.png" alt="" class="brand-shield" />
+                  <span class="brand-wordmark">
+                    <strong>BRANDVAGT</strong>
+                    <span class="brand-country">DANMARK</span>
+                    <span class="brand-suffix">ApS</span>
+                  </span>
+                </span>
               </div>
             </div>
 

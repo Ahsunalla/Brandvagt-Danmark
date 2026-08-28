@@ -127,9 +127,46 @@ button {
 }
 
 .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-shield {
   display: block;
-  height: 34px;
+  height: 38px;
   width: auto;
+}
+
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.brand-wordmark strong {
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
+
+.brand-wordmark .brand-country {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  color: #6d6a63;
+  margin-top: 5px;
+}
+
+.brand-wordmark .brand-suffix {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #9a968d;
+  margin-top: 3px;
 }
 
 .desktop-nav {
@@ -259,7 +296,7 @@ button {
   right: -300px;
   top: 50%;
   transform: translateY(-50%);
-  border: 1px solid rgba(21, 21, 21, 0.07);
+  border: 1px solid rgba(21, 21, 21, 0.18);
   border-radius: 50%;
 }
 
@@ -267,7 +304,7 @@ button {
 .hero-background::after {
   content: "";
   position: absolute;
-  border: 1px solid rgba(21, 21, 21, 0.05);
+  border: 1px solid rgba(21, 21, 21, 0.14);
   border-radius: 50%;
 }
 
