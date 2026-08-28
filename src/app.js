@@ -70,9 +70,9 @@ const translations = {
       h2b: "en brandvagt?",
       p: "Fortæl os om din opgave. Vi finder den rigtige løsning sammen med dig.",
       cardTop1: "START HER",
-      cardTitleA: "Få et uforpligtende",
-      cardTitleB: "tilbud.",
-      cardP: "Kontakt os i dag og hør, hvordan vi kan hjælpe.",
+      cardTitleA: "Din sikkerhed",
+      cardTitleB: "starter her.",
+      cardP: "Kontakt os i dag for en uforpligtende snak om, hvordan vi kan hjælpe.",
       callBtn: "Ring til os"
     },
     footer: {
@@ -153,9 +153,9 @@ const translations = {
       h2b: "fire watch?",
       p: "Tell us about your job. We'll find the right solution together.",
       cardTop1: "START HERE",
-      cardTitleA: "Get a no-obligation",
-      cardTitleB: "quote.",
-      cardP: "Contact us today to hear how we can help.",
+      cardTitleA: "Your safety",
+      cardTitleB: "starts here.",
+      cardP: "Contact us today for a no-obligation chat about how we can help.",
       callBtn: "Call us"
     },
     footer: {
@@ -216,12 +216,14 @@ function render(lang) {
     <header class="navbar">
       <div class="nav-inner">
         <a href="#top" class="brand" aria-label="Brandvagt Danmark ApS">
-          <span class="brand-logo">
-            <img src="/assets/brandvagt-shield.png" alt="" class="brand-shield" />
-            <span class="brand-wordmark">
-              <strong>BRANDVAGT</strong>
-              <span class="brand-country">DANMARK</span>
-              <span class="brand-suffix">ApS</span>
+          <span class="brand-chip">
+            <span class="brand-logo">
+              <img src="/assets/brandvagt-shield.png" alt="" class="brand-shield" />
+              <span class="brand-wordmark">
+                <strong>BRANDVAGT</strong>
+                <span class="brand-country">DANMARK</span>
+                <span class="brand-suffix">ApS</span>
+              </span>
             </span>
           </span>
         </a>
@@ -586,7 +588,7 @@ function render(lang) {
           <div class="footer-brand">
 
             <div class="brand" aria-label="Brandvagt Danmark ApS">
-              <div class="footer-logo">
+              <span class="brand-chip">
                 <span class="brand-logo">
                   <img src="/assets/brandvagt-shield.png" alt="" class="brand-shield" />
                   <span class="brand-wordmark">
@@ -595,7 +597,7 @@ function render(lang) {
                     <span class="brand-suffix">ApS</span>
                   </span>
                 </span>
-              </div>
+              </span>
             </div>
 
             <p>
