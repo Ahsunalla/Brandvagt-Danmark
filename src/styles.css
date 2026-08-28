@@ -433,7 +433,7 @@ button {
 .fire-mini-flame {
   position: absolute;
   left: 50%;
-  bottom: 50%;
+  bottom: 30%;
   transform: scale(0.45);
   transform-origin: bottom center;
 }
