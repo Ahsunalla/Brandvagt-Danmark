@@ -42,7 +42,12 @@ app.innerHTML = `
     <main id="top">
 
       <section class="hero">
-        <div class="hero-background"></div>
+        <div class="hero-background">
+          <span class="radar-pulse"></span>
+          <span class="radar-pulse"></span>
+          <span class="radar-pulse"></span>
+          <span class="radar-dot"></span>
+        </div>
 
         <div class="hero-content">
 
