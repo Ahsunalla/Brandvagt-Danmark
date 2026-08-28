@@ -420,13 +420,14 @@ button {
 
 .fire-contact {
   position: absolute;
-  top: 24%;
+  top: 38%;
   left: 32%;
   width: 46px;
   height: 46px;
   margin: -23px 0 0 -23px;
   opacity: 0;
   animation: fire-detect-cycle 4s ease-in-out infinite;
+  animation-delay: -1.026s;
 }
 
 .fire-mini-flame {
@@ -443,6 +444,7 @@ button {
   height: 10px;
   border: 1.5px solid var(--red);
   animation: fire-lock 4s ease-in-out infinite;
+  animation-delay: -1.026s;
 }
 
 .fire-corner.tl { top: 0; left: 0; border-right: 0; border-bottom: 0; }
@@ -451,15 +453,15 @@ button {
 .fire-corner.br { bottom: 0; right: 0; border-left: 0; border-top: 0; }
 
 @keyframes fire-detect-cycle {
-  0%, 8% { opacity: 0; }
-  12% { opacity: 1; }
+  0%, 9% { opacity: 0; }
+  10% { opacity: 1; }
   62% { opacity: 1; }
   72%, 100% { opacity: 0; }
 }
 
 @keyframes fire-lock {
   0%, 8% { transform: scale(1.9); }
-  14% { transform: scale(1); }
+  12% { transform: scale(1); }
   62% { transform: scale(1); }
   72%, 100% { transform: scale(0.85); }
 }
@@ -1342,6 +1344,11 @@ button {
   .fire-contact {
     top: 66%;
     left: 47%;
+    animation-delay: -2.282s;
+  }
+
+  .fire-contact .fire-corner {
+    animation-delay: -2.282s;
   }
 
   .menu-button {
