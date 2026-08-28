@@ -28,4 +28,8 @@ you want to publish.
 
 ## Brand asset
 
-`public/brandvagt-logo.png` was extracted from the supplied Brandvagt Danmark logo sheet.
+`assets/brandvagt-logo.png` was extracted from the supplied Brandvagt Danmark logo sheet.
+
+Note: the asset folder is named `assets/`, not `public/` — Vercel's zero-config
+static deploy treats a folder literally named `public` as the site's output root,
+which would hide `index.html` and cause a 404.

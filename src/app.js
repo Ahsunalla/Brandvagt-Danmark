@@ -7,7 +7,7 @@ app.innerHTML = `
     <header class="navbar">
       <div class="nav-inner">
         <a href="#top" class="brand">
-          <img src="/public/brandvagt-logo.png" alt="Brandvagt Danmark" class="brand-logo" />
+          <img src="/assets/brandvagt-logo.png" alt="Brandvagt Danmark" class="brand-logo" />
         </a>
 
         <nav class="desktop-nav">
@@ -500,7 +500,7 @@ app.innerHTML = `
 
             <div class="brand">
               <div class="footer-logo">
-                <img src="/public/brandvagt-logo.png" alt="Brandvagt Danmark" class="brand-logo" />
+                <img src="/assets/brandvagt-logo.png" alt="Brandvagt Danmark" class="brand-logo" />
               </div>
             </div>
 
