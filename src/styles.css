@@ -693,29 +693,17 @@ button {
 }
 
 
-/* --- Hard hat (Byggepladser) --- */
+/* --- Digger (Byggepladser) --- */
 
-.icon-hat .hat-group {
+.icon-digger .dig-arm {
   transform-box: view-box;
-  transform-origin: 24px 29px;
-  animation: hat-bounce 3.4s ease-in-out infinite;
+  transform-origin: 16.5px 21px;
+  animation: dig-motion 2.8s ease-in-out infinite;
 }
 
-.icon-hat .hat-vent {
-  transform-box: view-box;
-  transform-origin: 24px 17px;
-  mix-blend-mode: difference;
-  animation: hat-vent-pulse 2s ease-in-out infinite;
-}
-
-@keyframes hat-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
-@keyframes hat-vent-pulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.35); }
+@keyframes dig-motion {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg); }
 }
 
 
@@ -747,8 +735,7 @@ button {
 
 @media (prefers-reduced-motion: reduce) {
   .icon-flame .flame,
-  .icon-hat .hat-group,
-  .icon-hat .hat-vent,
+  .icon-digger .dig-arm,
   .icon-spotlight .spotlight-beam,
   .icon-building .win {
     animation: none;

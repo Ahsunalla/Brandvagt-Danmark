@@ -174,10 +174,12 @@ const serviceIcons = [
    <span class="flame flame-mid"><i></i></span>
    <span class="flame flame-core"><i></i></span>`,
   `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-     <g class="hat-group">
-       <path d="M12 30 C12 16.5 17 9 24 9 C31 9 36 16.5 36 30 Z" fill="currentColor"/>
-       <path d="M5 30.5 C5 28 7.5 26.5 11 26.5 L37 26.5 C40.5 26.5 43 28 43 30.5 C43 34.5 39 36.5 33 36.5 L15 36.5 C9 36.5 5 34.5 5 30.5 Z" fill="currentColor"/>
-       <circle class="hat-vent" cx="24" cy="17" r="2" fill="#fff"/>
+     <rect x="4" y="34" width="22" height="7" rx="3.5" fill="currentColor"/>
+     <path d="M9 34 L9 23.5 C9 21.5 10.5 20 12.5 20 L18.5 20 C20.5 20 22 21.5 22 23.5 L22 34 Z" fill="currentColor"/>
+     <g class="dig-arm">
+       <path d="M16.5 21 L31 12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+       <path d="M31 12 L40 22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+       <path d="M40 22 Q45.5 24 41 30.5 Q36.5 28.5 36.5 24 Z" fill="currentColor"/>
      </g>
    </svg>`,
   `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,20 +190,21 @@ const serviceIcons = [
      <circle cx="24" cy="16" r="2.4" fill="currentColor"/>
    </svg>`,
   `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <rect x="29" y="1.5" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.6"/>
      <rect x="10" y="6" width="28" height="38" rx="1.5" stroke="currentColor" stroke-width="2.2"/>
-     <rect class="win" style="animation-delay:0s" x="13.5" y="13.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.5s" x="21.5" y="13.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1s" x="29.5" y="13.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1.5s" x="13.5" y="22.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.2s" x="21.5" y="22.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1.2s" x="29.5" y="22.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.8s" x="13.5" y="31.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:1.7s" x="21.5" y="31.5" width="5" height="5" fill="currentColor"/>
-     <rect class="win" style="animation-delay:.4s" x="29.5" y="31.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:0s" x="13.5" y="13" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:.5s" x="21.5" y="13" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1s" x="29.5" y="13" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1.5s" x="13.5" y="21.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:.2s" x="21.5" y="21.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1.2s" x="29.5" y="21.5" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:.8s" x="13.5" y="30" width="5" height="5" fill="currentColor"/>
+     <rect class="win" style="animation-delay:1.4s" x="29.5" y="30" width="5" height="5" fill="currentColor"/>
+     <rect x="20.5" y="30" width="7" height="14" rx="1" fill="currentColor"/>
    </svg>`
 ];
 
-const iconClasses = ["icon-flame", "icon-hat", "icon-spotlight", "icon-building"];
+const iconClasses = ["icon-flame", "icon-digger", "icon-spotlight", "icon-building"];
 
 function render(lang) {
   const t = translations[lang];
