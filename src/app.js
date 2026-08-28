@@ -269,10 +269,23 @@ function render(lang) {
 
       <section class="hero">
         <div class="hero-background" aria-hidden="true">
+          <span class="radar-sweep"></span>
           <span class="radar-pulse"></span>
           <span class="radar-pulse"></span>
           <span class="radar-pulse"></span>
           <span class="radar-dot"></span>
+
+          <span class="fire-contact">
+            <span class="icon-flame fire-mini-flame">
+              <span class="flame flame-back"><i></i></span>
+              <span class="flame flame-mid"><i></i></span>
+              <span class="flame flame-core"><i></i></span>
+            </span>
+            <span class="fire-corner tl"></span>
+            <span class="fire-corner tr"></span>
+            <span class="fire-corner bl"></span>
+            <span class="fire-corner br"></span>
+          </span>
         </div>
 
         <div class="hero-content">
