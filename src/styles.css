@@ -150,6 +150,38 @@ button {
   color: var(--red);
 }
 
+.lang-switch {
+  display: flex;
+  gap: 4px;
+  margin-right: 22px;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 7px 11px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #4e4c47;
+  transition: 0.2s;
+}
+
+.lang-btn:hover {
+  border-color: var(--black);
+}
+
+.lang-btn.active {
+  background: var(--black);
+  color: white;
+  border-color: var(--black);
+}
+
+.lang-switch-mobile {
+  display: none;
+}
+
 .nav-button {
   background: var(--black);
   color: white;
@@ -661,17 +693,28 @@ button {
 }
 
 
-/* --- Crane (Byggepladser) --- */
+/* --- Hard hat (Byggepladser) --- */
 
-.icon-crane .crane-hook {
+.icon-hat .hat-group {
   transform-box: view-box;
-  transform-origin: 34px 8px;
-  animation: crane-hoist 3.2s ease-in-out infinite;
+  transform-origin: 24px 29px;
+  animation: hat-bounce 3.4s ease-in-out infinite;
 }
 
-@keyframes crane-hoist {
-  0%, 100% { transform: scaleY(1); }
-  50% { transform: scaleY(0.8); }
+.icon-hat .hat-vent {
+  transform-box: view-box;
+  transform-origin: 24px 14px;
+  animation: hat-vent-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hat-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes hat-vent-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.35); }
 }
 
 
@@ -703,7 +746,8 @@ button {
 
 @media (prefers-reduced-motion: reduce) {
   .icon-flame .flame,
-  .icon-crane .crane-hook,
+  .icon-hat .hat-group,
+  .icon-hat .hat-vent,
   .icon-spotlight .spotlight-beam,
   .icon-building .win {
     animation: none;
@@ -1159,8 +1203,14 @@ button {
 @media (max-width: 900px) {
 
   .desktop-nav,
-  .nav-button {
+  .nav-button,
+  .navbar > .nav-inner > .lang-switch {
     display: none;
+  }
+
+  .lang-switch-mobile {
+    display: flex;
+    margin-top: 6px;
   }
 
   .hero-background {
