@@ -614,7 +614,7 @@ button {
   width: 100%;
   height: 100%;
   border-radius: 50% 50% 50% 0;
-  transform: rotate(-135deg);
+  transform: rotate(135deg);
 }
 
 .icon-flame .flame-back {
@@ -666,12 +666,12 @@ button {
 .icon-crane .crane-hook {
   transform-box: view-box;
   transform-origin: 34px 8px;
-  animation: crane-swing 3.6s ease-in-out infinite;
+  animation: crane-hoist 3.2s ease-in-out infinite;
 }
 
-@keyframes crane-swing {
-  0%, 100% { transform: rotate(-6deg); }
-  50% { transform: rotate(6deg); }
+@keyframes crane-hoist {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.8); }
 }
 
 
