@@ -42,9 +42,7 @@ app.innerHTML = `
     <main id="top">
 
       <section class="hero">
-        <div class="hero-background"></div>
-
-        <div class="radar" aria-hidden="true">
+        <div class="hero-background" aria-hidden="true">
           <span class="radar-pulse"></span>
           <span class="radar-pulse"></span>
           <span class="radar-pulse"></span>
@@ -178,9 +176,9 @@ app.innerHTML = `
               <div class="card-number">01</div>
 
               <div class="service-icon icon-flame" aria-hidden="true">
-                <span class="flame flame-back"></span>
-                <span class="flame flame-mid"></span>
-                <span class="flame flame-core"></span>
+                <span class="flame flame-back"><i></i></span>
+                <span class="flame flame-mid"><i></i></span>
+                <span class="flame flame-core"><i></i></span>
               </div>
 
               <h3>Brandvagt</h3>

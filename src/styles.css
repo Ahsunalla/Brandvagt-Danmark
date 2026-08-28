@@ -247,16 +247,6 @@ button {
   inset: 180px;
 }
 
-.radar {
-  position: absolute;
-  width: 760px;
-  height: 760px;
-  right: -300px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
 .radar-pulse {
   position: absolute;
   inset: 0;
@@ -585,9 +575,9 @@ button {
 }
 
 .service-icon {
-  width: 40px;
-  height: 44px;
-  margin-bottom: 80px;
+  width: 56px;
+  height: 62px;
+  margin-bottom: 70px;
   position: relative;
   color: var(--black);
 }
@@ -615,43 +605,59 @@ button {
   position: absolute;
   bottom: 0;
   left: 50%;
-  border-radius: 50% 50% 50% 0;
   transform-origin: bottom center;
+  animation: flame-sway 2.2s ease-in-out infinite;
+}
+
+.icon-flame .flame i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-135deg);
 }
 
 .icon-flame .flame-back {
-  width: 30px;
-  height: 30px;
-  margin-left: -15px;
+  width: 42px;
+  height: 42px;
+  margin-left: -21px;
+  animation-duration: 2.6s;
+}
+
+.icon-flame .flame-back i {
   background: var(--red-dark);
   opacity: 0.55;
-  transform: rotate(-135deg);
-  animation: flame-flicker 2.6s ease-in-out infinite;
 }
 
 .icon-flame .flame-mid {
-  width: 21px;
-  height: 21px;
-  margin-left: -10.5px;
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  animation-duration: 2.1s;
+  animation-delay: 0.15s;
+}
+
+.icon-flame .flame-mid i {
   background: var(--red);
-  transform: rotate(-135deg);
-  animation: flame-flicker 2.1s ease-in-out infinite 0.15s;
 }
 
 .icon-flame .flame-core {
-  width: 10px;
-  height: 10px;
-  margin-left: -5px;
-  bottom: 2px;
-  background: #ffb545;
-  transform: rotate(-135deg);
-  animation: flame-flicker 1.7s ease-in-out infinite 0.3s;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  bottom: 3px;
+  animation-duration: 1.7s;
+  animation-delay: 0.3s;
 }
 
-@keyframes flame-flicker {
-  0%, 100% { transform: rotate(-135deg) scale(1); }
-  30% { transform: rotate(-142deg) scale(1.06, 0.94); }
-  60% { transform: rotate(-127deg) scale(0.94, 1.06); }
+.icon-flame .flame-core i {
+  background: #ffb545;
+}
+
+@keyframes flame-sway {
+  0%, 100% { transform: scaleY(1) translateY(0); }
+  30% { transform: scaleY(1.16) translateY(-4px); }
+  60% { transform: scaleY(0.92) translateY(1px); }
 }
 
 
@@ -1157,11 +1163,11 @@ button {
     display: none;
   }
 
-  .radar {
-    width: 84px;
-    height: 84px;
-    right: 8%;
-    top: 96px;
+  .hero-background {
+    width: 420px;
+    height: 420px;
+    right: -135px;
+    top: -115px;
     transform: none;
   }
 
