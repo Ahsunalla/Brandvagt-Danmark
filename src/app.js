@@ -65,6 +65,15 @@ const translations = {
       numberLabel: "timer",
       caseCaption: "Hos HJM Recycling, Køge"
     },
+    career: {
+      label: "KARRIERE",
+      h2a: "Vil du være",
+      h2b: "vores næste brandvagt?",
+      p: "Vi er altid på udkig efter ansvarsbevidste folk, der tager sikkerhed seriøst. Send din ansøgning, så vender vi hurtigt tilbage.",
+      cardTitle: "Send os din ansøgning.",
+      cardP: "Skriv lidt om dig selv, og hvorfor du vil være brandvagt hos os.",
+      applyBtn: "Send ansøgning"
+    },
     contact: {
       label: "KONTAKT",
       h2a: "Har du brug for",
@@ -147,6 +156,15 @@ const translations = {
       points: ["Professional service", "Focus on safety", "Flexible solutions"],
       numberLabel: "hours",
       caseCaption: "At HJM Recycling, Køge"
+    },
+    career: {
+      label: "CAREERS",
+      h2a: "Want to be",
+      h2b: "our next fire watch?",
+      p: "We're always looking for responsible people who take safety seriously. Send your application and we'll get back to you quickly.",
+      cardTitle: "Send us your application.",
+      cardP: "Tell us a bit about yourself, and why you'd like to work with us.",
+      applyBtn: "Send application"
     },
     contact: {
       label: "CONTACT",
@@ -736,38 +754,56 @@ function mount(lang) {
   });
 
 
-  /* RADAR DETECTION SPOT (desktop only, random per load) */
+  /* RADAR DETECTION SPOT (desktop only, moves on its own) */
 
   syncRadarPosition();
 }
 
 
 const RADAR_POSITIONS = [
-  { top: 38, left: 32, delay: -1.026 },
-  { top: 60, left: 35, delay: -1.774 },
-  { top: 30, left: 45, delay: -0.556 }
+  { top: 38, left: 32, delay: -1.026, angle: 303.69 },
+  { top: 60, left: 35, delay: -1.774, angle: 236.31 },
+  { top: 30, left: 45, delay: -0.556, angle: 345.96 }
 ];
+
+let currentRadarPos = null;
+let radarIntervalStarted = false;
+
+function isDesktopRadar() {
+  return window.innerWidth > 900;
+}
+
+function getSweepAngleDeg() {
+  const sweep = document.querySelector(".radar-sweep");
+  if (!sweep) return null;
+  const anims = sweep.getAnimations();
+  if (!anims.length) return null;
+  const progress = (anims[0].currentTime % 4000) / 4000;
+  return progress * 360;
+}
 
 function syncRadarPosition() {
   const fireContact = document.querySelector(".fire-contact");
   if (!fireContact) return;
 
-  const isDesktop = window.innerWidth > 900;
-
-  if (!isDesktop) {
+  if (!isDesktopRadar()) {
     fireContact.style.top = "";
     fireContact.style.left = "";
+    fireContact.style.animation = "";
     fireContact.style.animationDelay = "";
     fireContact.querySelectorAll(".fire-corner").forEach((corner) => {
+      corner.style.animation = "";
       corner.style.animationDelay = "";
     });
     fireContact.dataset.radarPositioned = "";
+    currentRadarPos = null;
     return;
   }
 
   if (fireContact.dataset.radarPositioned === "true") return;
 
   const pos = RADAR_POSITIONS[Math.floor(Math.random() * RADAR_POSITIONS.length)];
+  currentRadarPos = pos;
 
   fireContact.style.top = `${pos.top}%`;
   fireContact.style.left = `${pos.left}%`;
@@ -776,6 +812,40 @@ function syncRadarPosition() {
     corner.style.animationDelay = `${pos.delay}s`;
   });
   fireContact.dataset.radarPositioned = "true";
+
+  if (!radarIntervalStarted) {
+    radarIntervalStarted = true;
+    setInterval(switchRadarPosition, 4000);
+  }
+}
+
+function switchRadarPosition() {
+  const fireContact = document.querySelector(".fire-contact");
+  if (!fireContact || !isDesktopRadar()) return;
+
+  const currentAngle = getSweepAngleDeg();
+  if (currentAngle === null) return;
+
+  const choices = RADAR_POSITIONS.filter((p) => p !== currentRadarPos);
+  const pos = choices[Math.floor(Math.random() * choices.length)];
+  currentRadarPos = pos;
+
+  const timeToTarget = (((pos.angle - currentAngle + 360) % 360) / 360) * 4000;
+  const delayMs = timeToTarget - 400;
+
+  fireContact.style.top = `${pos.top}%`;
+  fireContact.style.left = `${pos.left}%`;
+
+  const corners = fireContact.querySelectorAll(".fire-corner");
+  fireContact.style.animation = "none";
+  corners.forEach((corner) => { corner.style.animation = "none"; });
+  void fireContact.offsetWidth;
+  fireContact.style.animation = "fire-detect-cycle 4s ease-in-out infinite";
+  fireContact.style.animationDelay = `${delayMs}ms`;
+  corners.forEach((corner) => {
+    corner.style.animation = "fire-lock 4s ease-in-out infinite";
+    corner.style.animationDelay = `${delayMs}ms`;
+  });
 }
 
 window.addEventListener("resize", syncRadarPosition);
