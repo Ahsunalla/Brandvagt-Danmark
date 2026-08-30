@@ -67,6 +67,7 @@ const translations = {
     },
     career: {
       label: "KARRIERE",
+      navLabel: "Karriere",
       h2a: "Vil du være",
       h2b: "vores næste brandvagt?",
       p: "Vi er altid på udkig efter ansvarsbevidste folk, der tager sikkerhed seriøst. Send din ansøgning, så vender vi hurtigt tilbage.",
@@ -159,6 +160,7 @@ const translations = {
     },
     career: {
       label: "CAREERS",
+      navLabel: "Careers",
       h2a: "Want to be",
       h2b: "our next fire watch?",
       p: "We're always looking for responsible people who take safety seriously. Send your application and we'll get back to you quickly.",
@@ -558,6 +560,43 @@ function render(lang) {
       </section>
 
 
+      <!-- CAREER -->
+      <section class="career section" id="career">
+        <div class="container career-inner">
+
+          <div class="career-copy">
+            <div class="section-label">
+              <span>06</span>
+              <span class="label-line"></span>
+              <span>${t.career.label}</span>
+            </div>
+
+            <h2>
+              ${t.career.h2a}
+              <span>${t.career.h2b}</span>
+            </h2>
+
+            <p>${t.career.p}</p>
+          </div>
+
+          <div class="career-card">
+            <h3>${t.career.cardTitle}</h3>
+            <p>${t.career.cardP}</p>
+
+            <a href="mailto:job@brandvagtdanmark.dk?subject=Ansøgning" class="career-button">
+              ${t.career.applyBtn}
+              <span>→</span>
+            </a>
+
+            <a href="mailto:job@brandvagtdanmark.dk" class="email-link">
+              job@brandvagtdanmark.dk
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
       <!-- CTA -->
       <section class="contact" id="contact">
 
@@ -565,7 +604,7 @@ function render(lang) {
 
           <div class="contact-copy">
             <div class="section-label light">
-              <span>06</span>
+              <span>07</span>
               <span class="label-line"></span>
               <span>${t.contact.label}</span>
             </div>
@@ -649,6 +688,7 @@ function render(lang) {
               <a href="#services">${t.nav.services}</a>
               <a href="#why-us">${t.nav.whyUs}</a>
               <a href="#about">${t.nav.about}</a>
+              <a href="#career">${t.career.navLabel}</a>
               <a href="#contact">${t.nav.contact}</a>
             </div>
 
