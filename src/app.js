@@ -62,7 +62,8 @@ const translations = {
       p1: "Brandvagt Danmark er skabt med én klar ambition: at levere en brandvagt, du kan stole på.",
       p2: "Vi kombinerer professionel tilstedeværelse med ansvarlighed og et skarpt blik for de detaljer, der gør forskellen.",
       points: ["Professionel service", "Fokus på sikkerhed", "Fleksible løsninger"],
-      numberLabel: "timer"
+      numberLabel: "timer",
+      caseCaption: "Hos HJM Recycling, Køge"
     },
     contact: {
       label: "KONTAKT",
@@ -144,7 +145,8 @@ const translations = {
       p1: "Brandvagt Danmark was created with one clear ambition: to deliver a fire watch you can trust.",
       p2: "We combine a professional presence with accountability and a sharp eye for the details that make the difference.",
       points: ["Professional service", "Focus on safety", "Flexible solutions"],
-      numberLabel: "hours"
+      numberLabel: "hours",
+      caseCaption: "At HJM Recycling, Køge"
     },
     contact: {
       label: "CONTACT",
@@ -495,14 +497,13 @@ function render(lang) {
         <div class="container about-grid">
 
           <div class="about-visual">
+            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling i Køge" class="about-photo" />
+
+            <div class="about-caption">${t.about.caseCaption}</div>
+
             <div class="about-box">
               <span class="large-number">24</span>
               <span class="number-label">${t.about.numberLabel}</span>
-            </div>
-
-            <div class="about-circle">
-              <span>BRANDVAGT</span>
-              <span>DANMARK</span>
             </div>
           </div>
 
