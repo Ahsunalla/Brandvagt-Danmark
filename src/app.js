@@ -734,7 +734,52 @@ function mount(lang) {
     }
 
   });
+
+
+  /* RADAR DETECTION SPOT (desktop only, random per load) */
+
+  syncRadarPosition();
 }
+
+
+const RADAR_POSITIONS = [
+  { top: 38, left: 32, delay: -1.026 },
+  { top: 60, left: 35, delay: -1.774 },
+  { top: 30, left: 45, delay: -0.556 }
+];
+
+function syncRadarPosition() {
+  const fireContact = document.querySelector(".fire-contact");
+  if (!fireContact) return;
+
+  const isDesktop = window.innerWidth > 900;
+
+  if (!isDesktop) {
+    fireContact.style.top = "";
+    fireContact.style.left = "";
+    fireContact.style.animationDelay = "";
+    fireContact.querySelectorAll(".fire-corner").forEach((corner) => {
+      corner.style.animationDelay = "";
+    });
+    fireContact.dataset.radarPositioned = "";
+    return;
+  }
+
+  if (fireContact.dataset.radarPositioned === "true") return;
+
+  const pos = RADAR_POSITIONS[Math.floor(Math.random() * RADAR_POSITIONS.length)];
+
+  fireContact.style.top = `${pos.top}%`;
+  fireContact.style.left = `${pos.left}%`;
+  fireContact.style.animationDelay = `${pos.delay}s`;
+  fireContact.querySelectorAll(".fire-corner").forEach((corner) => {
+    corner.style.animationDelay = `${pos.delay}s`;
+  });
+  fireContact.dataset.radarPositioned = "true";
+}
+
+window.addEventListener("resize", syncRadarPosition);
+
 
 const savedLang = localStorage.getItem("bv-lang");
 const initialLang = savedLang === "en" ? "en" : "da";
