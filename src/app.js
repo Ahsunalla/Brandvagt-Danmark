@@ -632,7 +632,7 @@ function render(lang) {
 
             <p>${t.contact.cardP}</p>
 
-            <a href="tel:+4512345678" class="contact-button">
+            <a href="tel:+4581945076" class="contact-button">
               ${t.contact.callBtn}
               <span>→</span>
             </a>
@@ -694,7 +694,7 @@ function render(lang) {
 
             <div>
               <span>${t.footer.contactLabel}</span>
-              <a href="tel:+4512345678">+45 12 34 56 78</a>
+              <a href="tel:+4581945076">+45 81 94 50 76</a>
               <a href="mailto:kontakt@brandvagtdanmark.dk">
                 kontakt@brandvagtdanmark.dk
               </a>
