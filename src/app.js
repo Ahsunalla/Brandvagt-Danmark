@@ -973,9 +973,9 @@ function setupGuardScrollSpy() {
 
     const lastIndex = sections.length - 1;
     let pose;
-    if (currentIndex === lastIndex) {
+    if (currentIndex === lastIndex - 1) {
       pose = "pose-final";
-    } else if (currentIndex === lastIndex - 1) {
+    } else if (currentIndex === lastIndex - 2) {
       pose = "pose-2";
     } else {
       pose = "pose-1";
