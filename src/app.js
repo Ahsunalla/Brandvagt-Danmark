@@ -719,6 +719,63 @@ function render(lang) {
 
     </footer>
 
+    <div class="guard-mascot pose-1" aria-hidden="true">
+      <div class="guard-platform"></div>
+      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg">
+
+        <g class="guard-ext-ground">
+          <rect x="83" y="132" width="12" height="26" rx="3" fill="var(--red)"/>
+          <rect x="85.5" y="124" width="7" height="10" rx="2" fill="#191919"/>
+          <rect x="80" y="156" width="18" height="4" rx="2" fill="#191919" opacity="0.25"/>
+        </g>
+
+        <g class="guard-leg guard-leg-left">
+          <rect x="44" y="96" width="13" height="54" rx="6" fill="#191919"/>
+          <rect x="42" y="146" width="18" height="9" rx="4" fill="#0c0c0c"/>
+        </g>
+
+        <g class="guard-leg guard-leg-right">
+          <rect x="63" y="96" width="13" height="54" rx="6" fill="#191919"/>
+          <rect x="61" y="146" width="18" height="9" rx="4" fill="#0c0c0c"/>
+        </g>
+
+        <g class="guard-arm guard-arm-left">
+          <rect x="33" y="48" width="13" height="46" rx="6.5" fill="#6b1220"/>
+          <circle cx="39.5" cy="93" r="6.5" fill="#c98a5e"/>
+        </g>
+
+        <g class="guard-arm guard-arm-right">
+          <rect x="74" y="48" width="13" height="46" rx="6.5" fill="#6b1220"/>
+          <circle cx="80.5" cy="93" r="6.5" fill="#c98a5e"/>
+
+          <g class="guard-ext-held">
+            <rect x="74" y="80" width="12" height="24" rx="3" fill="var(--red)"/>
+            <rect x="76" y="73" width="8" height="9" rx="2" fill="#191919"/>
+            <rect x="70" y="76" width="8" height="3.5" rx="1.5" fill="#191919"/>
+            <g class="guard-spray">
+              <circle cx="102" cy="82" r="5" fill="#f5f4f0"/>
+              <circle cx="112" cy="78" r="4" fill="#f5f4f0"/>
+              <circle cx="112" cy="88" r="3.5" fill="#f5f4f0"/>
+              <circle cx="121" cy="83" r="3" fill="#f5f4f0"/>
+            </g>
+          </g>
+        </g>
+
+        <g class="guard-torso">
+          <rect x="42" y="44" width="36" height="52" rx="8" fill="var(--red)"/>
+          <rect x="42" y="70" width="36" height="6" fill="#f5f4f0" opacity="0.85"/>
+          <rect x="46" y="44" width="6" height="52" fill="#151515" opacity="0.12"/>
+        </g>
+
+        <g class="guard-head">
+          <circle cx="60" cy="34" r="11" fill="#c98a5e"/>
+          <path d="M46 30 C46 17 52 9 60 9 C68 9 74 17 74 30 Z" fill="var(--red)"/>
+          <path d="M42 30 Q60 37 78 30" stroke="var(--red)" stroke-width="5" stroke-linecap="round" fill="none"/>
+        </g>
+
+      </svg>
+    </div>
+
   </div>
   `;
 }
@@ -799,6 +856,44 @@ function mount(lang) {
   /* RADAR DETECTION SPOT (desktop only, moves on its own) */
 
   syncRadarPosition();
+
+
+  /* GUARD MASCOT (changes pose per section while scrolling) */
+
+  setupGuardScrollSpy();
+}
+
+
+const GUARD_POSE_CLASSES = ["pose-1", "pose-2", "pose-3", "pose-4"];
+let guardScrollHandler = null;
+
+function setupGuardScrollSpy() {
+  const mascot = document.querySelector(".guard-mascot");
+  const sections = Array.from(document.querySelectorAll("main section"));
+  if (!mascot || !sections.length) return;
+
+  if (guardScrollHandler) {
+    window.removeEventListener("scroll", guardScrollHandler);
+  }
+
+  guardScrollHandler = () => {
+    const centerY = window.innerHeight / 2;
+    let currentIndex = 0;
+
+    sections.forEach((section, i) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= centerY && rect.bottom >= centerY) {
+        currentIndex = i;
+      }
+    });
+
+    const pose = GUARD_POSE_CLASSES[currentIndex % GUARD_POSE_CLASSES.length];
+    mascot.classList.remove(...GUARD_POSE_CLASSES);
+    mascot.classList.add(pose);
+  };
+
+  window.addEventListener("scroll", guardScrollHandler, { passive: true });
+  guardScrollHandler();
 }
 
 
