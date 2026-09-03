@@ -723,66 +723,93 @@ function render(lang) {
       <div class="guard-platform"></div>
       <svg viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
 
+        <defs>
+          <radialGradient id="guardSkin" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#f6c79a"/>
+            <stop offset="100%" stop-color="#cf9165"/>
+          </radialGradient>
+          <linearGradient id="guardHelmet" x1="15%" y1="0%" x2="85%" y2="100%">
+            <stop offset="0%" stop-color="#ff6b7a"/>
+            <stop offset="55%" stop-color="var(--red)"/>
+            <stop offset="100%" stop-color="var(--red-dark)"/>
+          </linearGradient>
+          <linearGradient id="guardVest" x1="10%" y1="0%" x2="90%" y2="100%">
+            <stop offset="0%" stop-color="#ff6b7a"/>
+            <stop offset="50%" stop-color="var(--red)"/>
+            <stop offset="100%" stop-color="var(--red-dark)"/>
+          </linearGradient>
+          <linearGradient id="guardSleeve" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#93253a"/>
+            <stop offset="100%" stop-color="#5a0f1e"/>
+          </linearGradient>
+          <linearGradient id="guardPants" x1="0%" y1="0%" x2="30%" y2="100%">
+            <stop offset="0%" stop-color="#3c3c3c"/>
+            <stop offset="100%" stop-color="#121212"/>
+          </linearGradient>
+          <linearGradient id="guardBoot" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#333333"/>
+            <stop offset="100%" stop-color="#050505"/>
+          </linearGradient>
+          <linearGradient id="guardExtinguisher" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff6b7a"/>
+            <stop offset="100%" stop-color="var(--red-dark)"/>
+          </linearGradient>
+        </defs>
+
         <g class="guard-fire-scene">
           <g class="guard-fire">
-            <path d="M125 118 C111 103 115 83 125 68 C135 83 139 103 125 118 Z" fill="#ad0624"/>
-            <path d="M125 114 C115 102 118 88 125 78 C132 88 135 102 125 114 Z" fill="var(--red)"/>
-            <path d="M125 110 C119 103 121 95 125 90 C129 95 131 103 125 110 Z" fill="#ffb545"/>
+            <path d="M118 125 C107 113 110 97 118 85 C126 97 129 113 118 125 Z" fill="#ad0624"/>
+            <path d="M118 121 C110 112 112 101 118 93 C124 101 126 112 118 121 Z" fill="var(--red)"/>
+            <path d="M118 117 C113 112 114 105 118 100 C122 105 123 112 118 117 Z" fill="#ffb545"/>
           </g>
         </g>
 
         <g class="guard-ext-ground">
-          <rect x="110" y="150" width="14" height="30" rx="4" fill="var(--red)"/>
-          <rect x="113.5" y="139" width="8" height="12" rx="2" fill="#191919"/>
-          <rect x="106" y="179" width="22" height="5" rx="2.5" fill="#191919" opacity="0.25"/>
+          <rect x="100" y="142" width="13" height="28" rx="4" fill="url(#guardExtinguisher)"/>
+          <rect x="103" y="132" width="7" height="11" rx="2" fill="#191919"/>
+          <rect x="95" y="169" width="23" height="5" rx="2.5" fill="#191919" opacity="0.25"/>
         </g>
 
         <g class="guard-leg guard-leg-left">
-          <rect x="52" y="122" width="14" height="56" rx="7" fill="#191919"/>
-          <rect x="49" y="172" width="20" height="11" rx="5" fill="#0c0c0c"/>
+          <rect x="52" y="128" width="15" height="34" rx="7.5" fill="url(#guardPants)"/>
+          <rect x="48" y="158" width="22" height="13" rx="6" fill="url(#guardBoot)"/>
         </g>
 
         <g class="guard-leg guard-leg-right">
-          <rect x="74" y="122" width="14" height="56" rx="7" fill="#191919"/>
-          <rect x="71" y="172" width="20" height="11" rx="5" fill="#0c0c0c"/>
+          <rect x="73" y="128" width="15" height="34" rx="7.5" fill="url(#guardPants)"/>
+          <rect x="70" y="158" width="22" height="13" rx="6" fill="url(#guardBoot)"/>
         </g>
 
         <g class="guard-arm guard-arm-left">
-          <rect x="36" y="58" width="14" height="34" rx="7" fill="#6b1220"/>
+          <rect x="30" y="82" width="18" height="28" rx="9" fill="url(#guardSleeve)"/>
 
           <g class="guard-forearm guard-forearm-left">
-            <rect x="37" y="88" width="12" height="30" rx="6" fill="#6b1220"/>
+            <rect x="31" y="106" width="16" height="26" rx="8" fill="url(#guardSleeve)"/>
             <g class="guard-hand">
-              <circle cx="43" cy="122" r="8" fill="#c98a5e"/>
-              <rect x="37" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
-              <rect x="41.5" y="109" width="4.5" height="13" rx="2.2" fill="#c98a5e"/>
-              <rect x="46" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
-              <rect x="33" y="118" width="9" height="5" rx="2.5" fill="#c98a5e"/>
+              <circle cx="39" cy="132" r="10" fill="url(#guardSkin)"/>
+              <circle cx="30" cy="128" r="4" fill="url(#guardSkin)"/>
             </g>
           </g>
         </g>
 
         <g class="guard-arm guard-arm-right">
-          <rect x="90" y="58" width="14" height="34" rx="7" fill="#6b1220"/>
+          <rect x="92" y="82" width="18" height="28" rx="9" fill="url(#guardSleeve)"/>
 
           <g class="guard-forearm guard-forearm-right">
-            <rect x="91" y="88" width="12" height="30" rx="6" fill="#6b1220"/>
+            <rect x="93" y="106" width="16" height="26" rx="8" fill="url(#guardSleeve)"/>
             <g class="guard-hand">
-              <circle cx="97" cy="122" r="8" fill="#c98a5e"/>
-              <rect x="90.5" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
-              <rect x="95" y="109" width="4.5" height="13" rx="2.2" fill="#c98a5e"/>
-              <rect x="99.5" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
-              <rect x="98" y="118" width="9" height="5" rx="2.5" fill="#c98a5e"/>
+              <circle cx="101" cy="132" r="10" fill="url(#guardSkin)"/>
+              <circle cx="110" cy="128" r="4" fill="url(#guardSkin)"/>
 
               <g class="guard-ext-held">
-                <rect x="90" y="102" width="14" height="28" rx="4" fill="var(--red)"/>
-                <rect x="93.5" y="92" width="8" height="12" rx="2" fill="#191919"/>
-                <rect x="85" y="96" width="8" height="4" rx="2" fill="#191919"/>
+                <rect x="95" y="118" width="12" height="24" rx="4" fill="url(#guardExtinguisher)"/>
+                <rect x="98" y="108" width="6" height="10" rx="2" fill="#191919"/>
+                <rect x="90" y="112" width="7" height="4" rx="2" fill="#191919"/>
                 <g class="guard-spray">
-                  <circle cx="118" cy="108" r="5.5" fill="#f5f4f0"/>
-                  <circle cx="130" cy="103" r="4.5" fill="#f5f4f0"/>
-                  <circle cx="130" cy="114" r="4" fill="#f5f4f0"/>
-                  <circle cx="141" cy="108" r="3.5" fill="#f5f4f0"/>
+                  <circle cx="112" cy="118" r="5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="122" cy="113" r="4" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="122" cy="123" r="3.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="130" cy="118" r="3" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
                 </g>
               </g>
             </g>
@@ -790,20 +817,31 @@ function render(lang) {
         </g>
 
         <g class="guard-torso">
-          <rect x="44" y="54" width="52" height="68" rx="12" fill="var(--red)"/>
-          <rect x="44" y="88" width="52" height="8" fill="#f5f4f0" opacity="0.85"/>
-          <rect x="68" y="62" width="4" height="20" fill="#f5f4f0"/>
-          <rect x="58" y="70" width="24" height="4" fill="#f5f4f0"/>
-          <rect x="49" y="54" width="7" height="68" fill="#151515" opacity="0.1"/>
+          <rect x="42" y="80" width="56" height="52" rx="20" fill="url(#guardVest)"/>
+          <rect x="42" y="80" width="10" height="52" rx="20" fill="#151515" opacity="0.12"/>
+          <rect x="66" y="84" width="8" height="44" rx="4" fill="#fff" opacity="0.12"/>
+          <rect x="42" y="110" width="56" height="7" rx="3" fill="#f5f4f0" opacity="0.85"/>
+          <rect x="66" y="86" width="8" height="24" fill="#fff"/>
+          <rect x="58" y="94" width="24" height="8" fill="#fff"/>
         </g>
 
         <g class="guard-head">
-          <circle cx="70" cy="41" r="14" fill="#c98a5e"/>
-          <circle cx="64" cy="41" r="2.2" fill="#151515"/>
-          <circle cx="76" cy="41" r="2.2" fill="#151515"/>
-          <path d="M63 48 Q70 52 77 48" stroke="#151515" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <path d="M55 30 C55 16 61 8 70 8 C79 8 85 16 85 30 Z" fill="var(--red)"/>
-          <path d="M50 29 Q70 33 90 29" stroke="var(--red)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+          <path d="M43 46 C40 50 40 56 44 60 C42 54 43 50 46 47 Z" fill="#3d2b1f"/>
+          <path d="M97 46 C100 50 100 56 96 60 C98 54 97 50 94 47 Z" fill="#3d2b1f"/>
+          <circle cx="70" cy="52" r="25" fill="url(#guardSkin)"/>
+          <ellipse cx="52" cy="60" rx="5" ry="3.5" fill="#ff8d8d" opacity="0.35"/>
+          <ellipse cx="88" cy="60" rx="5" ry="3.5" fill="#ff8d8d" opacity="0.35"/>
+          <path d="M58 42 Q62 39 66 41" stroke="#3d2b1f" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M74 41 Q78 39 82 42" stroke="#3d2b1f" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <circle cx="61" cy="50" r="3.4" fill="#2b1c14"/>
+          <circle cx="79" cy="50" r="3.4" fill="#2b1c14"/>
+          <circle cx="60" cy="48.8" r="1" fill="#fff"/>
+          <circle cx="78" cy="48.8" r="1" fill="#fff"/>
+          <circle cx="70" cy="56" r="1.3" fill="#b5744e" opacity="0.6"/>
+          <path d="M61 62 Q70 68 79 62" stroke="#2b1c14" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+          <path d="M46 38 C46 20 56 10 70 10 C84 10 94 20 94 38 Z" fill="url(#guardHelmet)"/>
+          <ellipse cx="59" cy="20" rx="8" ry="5" fill="#fff" opacity="0.25"/>
+          <path d="M40 39 Q70 46 100 39" stroke="url(#guardHelmet)" stroke-width="6" stroke-linecap="round" fill="none"/>
         </g>
 
       </svg>

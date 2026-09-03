@@ -1710,12 +1710,12 @@ button {
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.guard-arm-left { transform-origin: 43px 59px; }
-.guard-arm-right { transform-origin: 97px 59px; }
-.guard-forearm-left { transform-origin: 43px 89px; }
-.guard-forearm-right { transform-origin: 97px 89px; }
-.guard-leg-left { transform-origin: 59px 122px; }
-.guard-leg-right { transform-origin: 81px 122px; }
+.guard-arm-left { transform-origin: 39px 83px; }
+.guard-arm-right { transform-origin: 101px 83px; }
+.guard-forearm-left { transform-origin: 39px 107px; }
+.guard-forearm-right { transform-origin: 101px 107px; }
+.guard-leg-left { transform-origin: 59.5px 128px; }
+.guard-leg-right { transform-origin: 80.5px 128px; }
 
 .guard-ext-ground,
 .guard-ext-held,
@@ -1725,7 +1725,7 @@ button {
 
 .guard-ext-ground {
   transform-box: view-box;
-  transform-origin: 117px 165px;
+  transform-origin: 106.5px 170px;
 }
 
 .guard-ext-held {
@@ -1735,7 +1735,7 @@ button {
 .guard-spray {
   opacity: 0;
   transform-box: view-box;
-  transform-origin: 100px 104px;
+  transform-origin: 100px 118px;
 }
 
 .guard-fire-scene,
@@ -1749,7 +1749,7 @@ button {
 
 .guard-fire {
   transform-box: view-box;
-  transform-origin: 125px 118px;
+  transform-origin: 118px 125px;
 }
 
 /* --- Pose 1: standing ready --- */
