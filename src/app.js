@@ -252,6 +252,7 @@ function render(lang) {
           <a href="#services">${t.nav.services}</a>
           <a href="#why-us">${t.nav.whyUs}</a>
           <a href="#about">${t.nav.about}</a>
+          <a href="#career">${t.career.navLabel}</a>
           <a href="#contact">${t.nav.contact}</a>
         </nav>
 
@@ -275,6 +276,7 @@ function render(lang) {
         <a href="#services">${t.nav.services}</a>
         <a href="#why-us">${t.nav.whyUs}</a>
         <a href="#about">${t.nav.about}</a>
+        <a href="#career">${t.career.navLabel}</a>
         <a href="#contact">${t.nav.contact}</a>
         <a href="#contact" class="mobile-cta">${t.nav.cta} →</a>
 
