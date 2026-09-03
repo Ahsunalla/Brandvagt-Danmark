@@ -757,17 +757,24 @@ function render(lang) {
         </defs>
 
         <g class="guard-fire-scene">
+          <ellipse cx="122" cy="172" rx="15" ry="4" fill="#191919" opacity="0.22"/>
           <g class="guard-fire">
-            <path d="M118 125 C107 113 110 97 118 85 C126 97 129 113 118 125 Z" fill="#ad0624"/>
-            <path d="M118 121 C110 112 112 101 118 93 C124 101 126 112 118 121 Z" fill="var(--red)"/>
-            <path d="M118 117 C113 112 114 105 118 100 C122 105 123 112 118 117 Z" fill="#ffb545"/>
+            <path d="M122 172 C111 160 114 144 122 129 C130 144 133 160 122 172 Z" fill="#ad0624"/>
+            <path d="M122 168 C114 159 116 148 122 139 C128 148 130 159 122 168 Z" fill="var(--red)"/>
+            <path d="M122 164 C117 159 118 152 122 147 C126 152 127 159 122 164 Z" fill="#ffb545"/>
           </g>
         </g>
 
         <g class="guard-ext-ground">
-          <rect x="100" y="142" width="13" height="28" rx="4" fill="url(#guardExtinguisher)"/>
-          <rect x="103" y="132" width="7" height="11" rx="2" fill="#191919"/>
-          <rect x="95" y="169" width="23" height="5" rx="2.5" fill="#191919" opacity="0.25"/>
+          <rect x="94" y="169" width="24" height="5" rx="2.5" fill="#191919" opacity="0.25"/>
+          <rect x="100" y="144" width="14" height="26" rx="5" fill="url(#guardExtinguisher)"/>
+          <rect x="100" y="144" width="14" height="8" rx="4" fill="#fff" opacity="0.18"/>
+          <rect x="104" y="134" width="6" height="10" rx="2" fill="#191919"/>
+          <path d="M103 135 Q108 129 112 135" stroke="#191919" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M104 137 Q94 133 89 139" stroke="#191919" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M89 139 L83 142 L89 144 Z" fill="#191919"/>
+          <circle cx="107" cy="153" r="2.4" fill="#fff" opacity="0.9"/>
+          <circle cx="107" cy="153" r="2.4" fill="none" stroke="#191919" stroke-width="0.7"/>
         </g>
 
         <g class="guard-leg guard-leg-left">
@@ -802,14 +809,20 @@ function render(lang) {
               <circle cx="110" cy="128" r="4" fill="url(#guardSkin)"/>
 
               <g class="guard-ext-held">
-                <rect x="95" y="118" width="12" height="24" rx="4" fill="url(#guardExtinguisher)"/>
+                <rect x="95" y="118" width="13" height="24" rx="5" fill="url(#guardExtinguisher)"/>
+                <rect x="95" y="118" width="13" height="7" rx="3.5" fill="#fff" opacity="0.18"/>
                 <rect x="98" y="108" width="6" height="10" rx="2" fill="#191919"/>
-                <rect x="90" y="112" width="7" height="4" rx="2" fill="#191919"/>
+                <path d="M97 109 Q101 103 105 109" stroke="#191919" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M98 111 Q108 107 114 113" stroke="#191919" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                <path d="M114 113 L120 115 L114 118 Z" fill="#191919"/>
+                <circle cx="101.5" cy="128" r="2.1" fill="#fff" opacity="0.9"/>
+                <circle cx="101.5" cy="128" r="2.1" fill="none" stroke="#191919" stroke-width="0.6"/>
                 <g class="guard-spray">
-                  <circle cx="112" cy="118" r="5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
-                  <circle cx="122" cy="113" r="4" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
-                  <circle cx="122" cy="123" r="3.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
-                  <circle cx="130" cy="118" r="3" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="116" cy="118" r="4.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="119" cy="128" r="4" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="121" cy="138" r="3.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="122" cy="148" r="3" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <circle cx="123" cy="157" r="2.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
                 </g>
               </g>
             </g>
@@ -935,8 +948,7 @@ function mount(lang) {
 }
 
 
-const GUARD_POSE_CLASSES = ["pose-1", "pose-2", "pose-3", "pose-4", "pose-final"];
-const GUARD_CYCLE_CLASSES = ["pose-1", "pose-2", "pose-3", "pose-4"];
+const GUARD_POSE_CLASSES = ["pose-1", "pose-2", "pose-final"];
 let guardScrollHandler = null;
 
 function setupGuardScrollSpy() {
@@ -959,10 +971,15 @@ function setupGuardScrollSpy() {
       }
     });
 
-    const isLastSection = currentIndex === sections.length - 1;
-    const pose = isLastSection
-      ? "pose-final"
-      : GUARD_CYCLE_CLASSES[currentIndex % GUARD_CYCLE_CLASSES.length];
+    const lastIndex = sections.length - 1;
+    let pose;
+    if (currentIndex === lastIndex) {
+      pose = "pose-final";
+    } else if (currentIndex === lastIndex - 1) {
+      pose = "pose-2";
+    } else {
+      pose = "pose-1";
+    }
     mascot.classList.remove(...GUARD_POSE_CLASSES);
     mascot.classList.add(pose);
   };

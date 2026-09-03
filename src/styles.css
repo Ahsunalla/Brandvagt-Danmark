@@ -1740,7 +1740,7 @@ button {
 
 .guard-fire-scene,
 .guard-fire {
-  transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .guard-fire-scene {
@@ -1749,10 +1749,10 @@ button {
 
 .guard-fire {
   transform-box: view-box;
-  transform-origin: 118px 125px;
+  transform-origin: 122px 172px;
 }
 
-/* --- Pose 1: standing ready --- */
+/* --- Pose 1: standing ready, extinguisher within reach --- */
 .pose-1 .guard-arm-left { transform: rotate(5deg); }
 .pose-1 .guard-forearm-left { transform: rotate(0deg); }
 .pose-1 .guard-arm-right { transform: rotate(-5deg); }
@@ -1764,46 +1764,20 @@ button {
 .pose-1 .guard-spray { opacity: 0; transform: scale(0.6); }
 .pose-1 .guard-fire-scene { opacity: 0; }
 
-/* --- Pose 2: reaching for the extinguisher --- */
-.pose-2 .guard-arm-left { transform: rotate(16deg); }
-.pose-2 .guard-forearm-left { transform: rotate(10deg); }
-.pose-2 .guard-arm-right { transform: rotate(-28deg); }
-.pose-2 .guard-forearm-right { transform: rotate(-38deg); }
+/* --- Pose 2: he spots the fire and reaches for the extinguisher --- */
+.pose-2 .guard-arm-left { transform: rotate(20deg); }
+.pose-2 .guard-forearm-left { transform: rotate(14deg); }
+.pose-2 .guard-arm-right { transform: rotate(-24deg); }
+.pose-2 .guard-forearm-right { transform: rotate(-30deg); }
 .pose-2 .guard-leg-left { transform: rotate(8deg); }
 .pose-2 .guard-leg-right { transform: rotate(-8deg); }
-.pose-2 .guard-ext-ground { opacity: 0.35; transform: scale(0.94) translateY(-4px); }
-.pose-2 .guard-ext-held { opacity: 0.85; }
+.pose-2 .guard-ext-ground { opacity: 1; transform: scale(1); }
+.pose-2 .guard-ext-held { opacity: 0; }
 .pose-2 .guard-spray { opacity: 0; transform: scale(0.6); }
-.pose-2 .guard-fire-scene { opacity: 0; }
+.pose-2 .guard-fire-scene { opacity: 1; }
+.pose-2 .guard-fire { transform: scale(0.55); }
 
-/* --- Pose 3: activating (raising to the chest) --- */
-.pose-3 .guard-arm-left { transform: rotate(48deg); }
-.pose-3 .guard-forearm-left { transform: rotate(58deg); }
-.pose-3 .guard-arm-right { transform: rotate(-52deg); }
-.pose-3 .guard-forearm-right { transform: rotate(-62deg); }
-.pose-3 .guard-leg-left,
-.pose-3 .guard-leg-right { transform: rotate(0deg); }
-.pose-3 .guard-ext-ground { opacity: 0; transform: scale(0.9); }
-.pose-3 .guard-ext-held { opacity: 1; }
-.pose-3 .guard-spray { opacity: 0; transform: scale(0.7); }
-.pose-3 .guard-fire-scene { opacity: 0; }
-
-/* --- Pose 4: spraying --- */
-.pose-4 .guard-arm-left { transform: rotate(30deg); }
-.pose-4 .guard-forearm-left { transform: rotate(18deg); }
-.pose-4 .guard-arm-right { transform: rotate(-34deg); }
-.pose-4 .guard-forearm-right { transform: rotate(-24deg); }
-.pose-4 .guard-leg-left { transform: rotate(12deg); }
-.pose-4 .guard-leg-right { transform: rotate(-15deg); }
-.pose-4 .guard-ext-ground { opacity: 0; transform: scale(0.9); }
-.pose-4 .guard-ext-held { opacity: 1; }
-.pose-4 .guard-spray {
-  opacity: 1;
-  animation: guard-spray-puff 0.9s ease-in-out infinite;
-}
-.pose-4 .guard-fire-scene { opacity: 0; }
-
-/* --- Pose final: putting out a real fire --- */
+/* --- Pose final: he turns it off --- */
 .pose-final .guard-arm-left { transform: rotate(12deg); }
 .pose-final .guard-forearm-left { transform: rotate(6deg); }
 .pose-final .guard-arm-right { transform: rotate(2deg); }
@@ -1817,7 +1791,9 @@ button {
   animation: guard-spray-puff 0.9s ease-in-out infinite;
 }
 .pose-final .guard-fire-scene { opacity: 1; }
-.pose-final .guard-fire { animation: guard-fire-life 3.2s ease-in-out infinite; }
+.pose-final .guard-fire {
+  animation: guard-fire-life 2.4s ease-out forwards;
+}
 
 @keyframes guard-spray-puff {
   0%, 100% { transform: scale(1) translateX(0); opacity: 0.9; }
@@ -1825,14 +1801,12 @@ button {
 }
 
 @keyframes guard-fire-life {
-  0% { transform: scale(1) rotate(0deg); opacity: 1; }
-  15% { transform: scale(1.08) rotate(-2deg); opacity: 1; }
-  30% { transform: scale(0.95) rotate(2deg); opacity: 1; }
-  45% { transform: scale(1.05) rotate(-1deg); opacity: 1; }
-  60% { transform: scale(1) rotate(0deg); opacity: 1; }
-  75% { transform: scale(0.5) rotate(0deg); opacity: 0.7; }
-  90% { transform: scale(0.12) rotate(0deg); opacity: 0.3; }
-  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  0% { transform: scale(0.55); opacity: 1; }
+  20% { transform: scale(0.72); opacity: 1; }
+  40% { transform: scale(0.5); opacity: 1; }
+  60% { transform: scale(0.65); opacity: 1; }
+  80% { transform: scale(0.3); opacity: 0.7; }
+  100% { transform: scale(0); opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
