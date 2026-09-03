@@ -721,56 +721,89 @@ function render(lang) {
 
     <div class="guard-mascot pose-1" aria-hidden="true">
       <div class="guard-platform"></div>
-      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+
+        <g class="guard-fire-scene">
+          <g class="guard-fire">
+            <path d="M125 118 C111 103 115 83 125 68 C135 83 139 103 125 118 Z" fill="#ad0624"/>
+            <path d="M125 114 C115 102 118 88 125 78 C132 88 135 102 125 114 Z" fill="var(--red)"/>
+            <path d="M125 110 C119 103 121 95 125 90 C129 95 131 103 125 110 Z" fill="#ffb545"/>
+          </g>
+        </g>
 
         <g class="guard-ext-ground">
-          <rect x="83" y="132" width="12" height="26" rx="3" fill="var(--red)"/>
-          <rect x="85.5" y="124" width="7" height="10" rx="2" fill="#191919"/>
-          <rect x="80" y="156" width="18" height="4" rx="2" fill="#191919" opacity="0.25"/>
+          <rect x="110" y="150" width="14" height="30" rx="4" fill="var(--red)"/>
+          <rect x="113.5" y="139" width="8" height="12" rx="2" fill="#191919"/>
+          <rect x="106" y="179" width="22" height="5" rx="2.5" fill="#191919" opacity="0.25"/>
         </g>
 
         <g class="guard-leg guard-leg-left">
-          <rect x="44" y="96" width="13" height="54" rx="6" fill="#191919"/>
-          <rect x="42" y="146" width="18" height="9" rx="4" fill="#0c0c0c"/>
+          <rect x="52" y="122" width="14" height="56" rx="7" fill="#191919"/>
+          <rect x="49" y="172" width="20" height="11" rx="5" fill="#0c0c0c"/>
         </g>
 
         <g class="guard-leg guard-leg-right">
-          <rect x="63" y="96" width="13" height="54" rx="6" fill="#191919"/>
-          <rect x="61" y="146" width="18" height="9" rx="4" fill="#0c0c0c"/>
+          <rect x="74" y="122" width="14" height="56" rx="7" fill="#191919"/>
+          <rect x="71" y="172" width="20" height="11" rx="5" fill="#0c0c0c"/>
         </g>
 
         <g class="guard-arm guard-arm-left">
-          <rect x="33" y="48" width="13" height="46" rx="6.5" fill="#6b1220"/>
-          <circle cx="39.5" cy="93" r="6.5" fill="#c98a5e"/>
+          <rect x="36" y="58" width="14" height="34" rx="7" fill="#6b1220"/>
+
+          <g class="guard-forearm guard-forearm-left">
+            <rect x="37" y="88" width="12" height="30" rx="6" fill="#6b1220"/>
+            <g class="guard-hand">
+              <circle cx="43" cy="122" r="8" fill="#c98a5e"/>
+              <rect x="37" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
+              <rect x="41.5" y="109" width="4.5" height="13" rx="2.2" fill="#c98a5e"/>
+              <rect x="46" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
+              <rect x="33" y="118" width="9" height="5" rx="2.5" fill="#c98a5e"/>
+            </g>
+          </g>
         </g>
 
         <g class="guard-arm guard-arm-right">
-          <rect x="74" y="48" width="13" height="46" rx="6.5" fill="#6b1220"/>
-          <circle cx="80.5" cy="93" r="6.5" fill="#c98a5e"/>
+          <rect x="90" y="58" width="14" height="34" rx="7" fill="#6b1220"/>
 
-          <g class="guard-ext-held">
-            <rect x="74" y="80" width="12" height="24" rx="3" fill="var(--red)"/>
-            <rect x="76" y="73" width="8" height="9" rx="2" fill="#191919"/>
-            <rect x="70" y="76" width="8" height="3.5" rx="1.5" fill="#191919"/>
-            <g class="guard-spray">
-              <circle cx="102" cy="82" r="5" fill="#f5f4f0"/>
-              <circle cx="112" cy="78" r="4" fill="#f5f4f0"/>
-              <circle cx="112" cy="88" r="3.5" fill="#f5f4f0"/>
-              <circle cx="121" cy="83" r="3" fill="#f5f4f0"/>
+          <g class="guard-forearm guard-forearm-right">
+            <rect x="91" y="88" width="12" height="30" rx="6" fill="#6b1220"/>
+            <g class="guard-hand">
+              <circle cx="97" cy="122" r="8" fill="#c98a5e"/>
+              <rect x="90.5" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
+              <rect x="95" y="109" width="4.5" height="13" rx="2.2" fill="#c98a5e"/>
+              <rect x="99.5" y="112" width="4.5" height="11" rx="2.2" fill="#c98a5e"/>
+              <rect x="98" y="118" width="9" height="5" rx="2.5" fill="#c98a5e"/>
+
+              <g class="guard-ext-held">
+                <rect x="90" y="102" width="14" height="28" rx="4" fill="var(--red)"/>
+                <rect x="93.5" y="92" width="8" height="12" rx="2" fill="#191919"/>
+                <rect x="85" y="96" width="8" height="4" rx="2" fill="#191919"/>
+                <g class="guard-spray">
+                  <circle cx="118" cy="108" r="5.5" fill="#f5f4f0"/>
+                  <circle cx="130" cy="103" r="4.5" fill="#f5f4f0"/>
+                  <circle cx="130" cy="114" r="4" fill="#f5f4f0"/>
+                  <circle cx="141" cy="108" r="3.5" fill="#f5f4f0"/>
+                </g>
+              </g>
             </g>
           </g>
         </g>
 
         <g class="guard-torso">
-          <rect x="42" y="44" width="36" height="52" rx="8" fill="var(--red)"/>
-          <rect x="42" y="70" width="36" height="6" fill="#f5f4f0" opacity="0.85"/>
-          <rect x="46" y="44" width="6" height="52" fill="#151515" opacity="0.12"/>
+          <rect x="44" y="54" width="52" height="68" rx="12" fill="var(--red)"/>
+          <rect x="44" y="88" width="52" height="8" fill="#f5f4f0" opacity="0.85"/>
+          <rect x="68" y="62" width="4" height="20" fill="#f5f4f0"/>
+          <rect x="58" y="70" width="24" height="4" fill="#f5f4f0"/>
+          <rect x="49" y="54" width="7" height="68" fill="#151515" opacity="0.1"/>
         </g>
 
         <g class="guard-head">
-          <circle cx="60" cy="34" r="11" fill="#c98a5e"/>
-          <path d="M46 30 C46 17 52 9 60 9 C68 9 74 17 74 30 Z" fill="var(--red)"/>
-          <path d="M42 30 Q60 37 78 30" stroke="var(--red)" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <circle cx="70" cy="41" r="14" fill="#c98a5e"/>
+          <circle cx="64" cy="41" r="2.2" fill="#151515"/>
+          <circle cx="76" cy="41" r="2.2" fill="#151515"/>
+          <path d="M63 48 Q70 52 77 48" stroke="#151515" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M55 30 C55 16 61 8 70 8 C79 8 85 16 85 30 Z" fill="var(--red)"/>
+          <path d="M50 29 Q70 33 90 29" stroke="var(--red)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
         </g>
 
       </svg>
@@ -864,7 +897,8 @@ function mount(lang) {
 }
 
 
-const GUARD_POSE_CLASSES = ["pose-1", "pose-2", "pose-3", "pose-4"];
+const GUARD_POSE_CLASSES = ["pose-1", "pose-2", "pose-3", "pose-4", "pose-final"];
+const GUARD_CYCLE_CLASSES = ["pose-1", "pose-2", "pose-3", "pose-4"];
 let guardScrollHandler = null;
 
 function setupGuardScrollSpy() {
@@ -887,7 +921,10 @@ function setupGuardScrollSpy() {
       }
     });
 
-    const pose = GUARD_POSE_CLASSES[currentIndex % GUARD_POSE_CLASSES.length];
+    const isLastSection = currentIndex === sections.length - 1;
+    const pose = isLastSection
+      ? "pose-final"
+      : GUARD_CYCLE_CLASSES[currentIndex % GUARD_CYCLE_CLASSES.length];
     mascot.classList.remove(...GUARD_POSE_CLASSES);
     mascot.classList.add(pose);
   };
