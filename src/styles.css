@@ -1725,7 +1725,7 @@ button {
 
 .guard-ext-ground {
   transform-box: view-box;
-  transform-origin: 106.5px 170px;
+  transform-origin: 97.5px 170px;
 }
 
 .guard-ext-held {
@@ -1749,7 +1749,7 @@ button {
 
 .guard-fire {
   transform-box: view-box;
-  transform-origin: 122px 172px;
+  transform-origin: 131px 172px;
 }
 
 /* --- Pose 1: standing ready, extinguisher within reach --- */

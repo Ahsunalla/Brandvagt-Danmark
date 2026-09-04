@@ -761,24 +761,24 @@ function render(lang) {
         </defs>
 
         <g class="guard-fire-scene">
-          <ellipse cx="122" cy="172" rx="15" ry="4" fill="#191919" opacity="0.22"/>
+          <ellipse cx="131" cy="172" rx="13" ry="4" fill="#191919" opacity="0.22"/>
           <g class="guard-fire">
-            <path d="M122 172 C111 160 114 144 122 129 C130 144 133 160 122 172 Z" fill="#ad0624"/>
-            <path d="M122 168 C114 159 116 148 122 139 C128 148 130 159 122 168 Z" fill="var(--red)"/>
-            <path d="M122 164 C117 159 118 152 122 147 C126 152 127 159 122 164 Z" fill="#ffb545"/>
+            <path d="M131 172 C120 160 123 144 131 129 C139 144 142 160 131 172 Z" fill="#ad0624"/>
+            <path d="M131 168 C123 159 125 148 131 139 C137 148 139 159 131 168 Z" fill="var(--red)"/>
+            <path d="M131 164 C126 159 127 152 131 147 C135 152 136 159 131 164 Z" fill="#ffb545"/>
           </g>
         </g>
 
         <g class="guard-ext-ground">
-          <rect x="94" y="169" width="24" height="5" rx="2.5" fill="#191919" opacity="0.25"/>
-          <rect x="100" y="144" width="14" height="26" rx="5" fill="url(#guardExtinguisher)"/>
-          <rect x="100" y="144" width="14" height="8" rx="4" fill="#fff" opacity="0.18"/>
-          <rect x="104" y="134" width="6" height="10" rx="2" fill="#191919"/>
-          <path d="M103 135 Q108 129 112 135" stroke="#191919" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <path d="M104 137 Q94 133 89 139" stroke="#191919" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <path d="M89 139 L83 142 L89 144 Z" fill="#191919"/>
-          <circle cx="107" cy="153" r="2.4" fill="#fff" opacity="0.9"/>
-          <circle cx="107" cy="153" r="2.4" fill="none" stroke="#191919" stroke-width="0.7"/>
+          <rect x="86" y="169" width="22" height="5" rx="2.5" fill="#191919" opacity="0.25"/>
+          <rect x="91" y="144" width="14" height="26" rx="5" fill="url(#guardExtinguisher)"/>
+          <rect x="91" y="144" width="14" height="8" rx="4" fill="#fff" opacity="0.18"/>
+          <rect x="95" y="134" width="6" height="10" rx="2" fill="#191919"/>
+          <path d="M94 135 Q99 129 103 135" stroke="#191919" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M95 137 Q85 133 80 139" stroke="#191919" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M80 139 L74 142 L80 144 Z" fill="#191919"/>
+          <circle cx="98" cy="153" r="2.4" fill="#fff" opacity="0.9"/>
+          <circle cx="98" cy="153" r="2.4" fill="none" stroke="#191919" stroke-width="0.7"/>
         </g>
 
         <g class="guard-leg guard-leg-left">
