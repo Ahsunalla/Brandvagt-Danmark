@@ -378,13 +378,30 @@ function render(lang) {
       <section class="intro section">
         <div class="container intro-grid">
 
-          <div class="section-label">
-            <span>01</span>
-            <span class="label-line"></span>
-            <span>${t.intro.label}</span>
+          <div class="case-visual">
+            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling i Køge" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
+            <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
+
+            <div class="case-caption">${t.about.caseCaption}</div>
+
+            <div class="case-dots" aria-hidden="true">
+              <span class="case-dot is-active"></span>
+              <span class="case-dot"></span>
+            </div>
+
+            <div class="case-box">
+              <span class="large-number">24</span>
+              <span class="number-label">${t.about.numberLabel}</span>
+            </div>
           </div>
 
           <div class="intro-content">
+            <div class="section-label">
+              <span>01</span>
+              <span class="label-line"></span>
+              <span>${t.intro.label}</span>
+            </div>
+
             <h2>
               ${t.intro.h2a}
               <em>${t.intro.h2b}</em>
@@ -518,25 +535,7 @@ function render(lang) {
 
       <!-- ABOUT -->
       <section class="about section" id="about">
-        <div class="container about-grid">
-
-          <div class="about-visual">
-            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling i Køge" class="about-photo is-active" data-caption="${t.about.caseCaption}" />
-            <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="about-photo" data-caption="${t.about.caseCaption2}" />
-
-            <div class="about-caption">${t.about.caseCaption}</div>
-
-            <div class="about-dots" aria-hidden="true">
-              <span class="about-dot is-active"></span>
-              <span class="about-dot"></span>
-            </div>
-
-            <div class="about-box">
-              <span class="large-number">24</span>
-              <span class="number-label">${t.about.numberLabel}</span>
-            </div>
-          </div>
-
+        <div class="container">
 
           <div class="about-content">
 
@@ -809,22 +808,22 @@ function mount(lang) {
   syncRadarPosition();
 
 
-  /* ABOUT SECTION CASE-PHOTO CAROUSEL */
+  /* CASE-PHOTO CAROUSEL */
 
-  setupAboutCarousel();
+  setupCaseCarousel();
 }
 
 
-let aboutCarouselTimer = null;
+let caseCarouselTimer = null;
 
-function setupAboutCarousel() {
-  const photos = Array.from(document.querySelectorAll(".about-photo"));
-  const captionEl = document.querySelector(".about-caption");
-  const dots = Array.from(document.querySelectorAll(".about-dot"));
+function setupCaseCarousel() {
+  const photos = Array.from(document.querySelectorAll(".case-photo"));
+  const captionEl = document.querySelector(".case-caption");
+  const dots = Array.from(document.querySelectorAll(".case-dot"));
   if (photos.length < 2) return;
 
-  if (aboutCarouselTimer) {
-    clearInterval(aboutCarouselTimer);
+  if (caseCarouselTimer) {
+    clearInterval(caseCarouselTimer);
   }
 
   let index = 0;
@@ -854,8 +853,8 @@ function setupAboutCarousel() {
   }
 
   function start() {
-    if (aboutCarouselTimer) clearInterval(aboutCarouselTimer);
-    aboutCarouselTimer = setInterval(() => {
+    if (caseCarouselTimer) clearInterval(caseCarouselTimer);
+    caseCarouselTimer = setInterval(() => {
       activate((index + 1) % photos.length);
     }, DURATION);
   }

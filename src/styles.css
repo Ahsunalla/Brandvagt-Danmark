@@ -641,8 +641,9 @@ button {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
 }
 
 .intro-content {
@@ -1067,21 +1068,18 @@ button {
   background: #f5f4f0;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 130px;
-  align-items: center;
+.about-content {
+  max-width: 720px;
 }
 
-.about-visual {
+.case-visual {
   height: 540px;
   position: relative;
   background: var(--black);
   overflow: hidden;
 }
 
-.about-box {
+.case-box {
   position: absolute;
   left: 50px;
   bottom: 50px;
@@ -1108,7 +1106,7 @@ button {
   letter-spacing: 0.15em;
 }
 
-.about-photo {
+.case-photo {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1120,13 +1118,13 @@ button {
   transition: opacity 1.2s ease, transform 5.2s ease;
 }
 
-.about-photo.is-active {
+.case-photo.is-active {
   opacity: 1;
   transform: scale(1.06);
   z-index: 1;
 }
 
-.about-caption {
+.case-caption {
   position: absolute;
   z-index: 2;
   top: 24px;
@@ -1142,7 +1140,7 @@ button {
   transition: opacity 0.3s ease;
 }
 
-.about-dots {
+.case-dots {
   position: absolute;
   z-index: 2;
   right: 24px;
@@ -1151,7 +1149,7 @@ button {
   gap: 8px;
 }
 
-.about-dot {
+.case-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -1160,12 +1158,12 @@ button {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.about-dot.is-active {
+.case-dot.is-active {
   background: #fff;
   transform: scale(1.35);
 }
 
-.about-box::before {
+.case-box::before {
   content: "";
   position: absolute;
   inset: -20px -24px;
@@ -1548,6 +1546,10 @@ button {
     gap: 50px;
   }
 
+  .case-visual {
+    height: 430px;
+  }
+
   .section {
     padding: 95px 0;
   }
@@ -1564,15 +1566,6 @@ button {
   .why-grid {
     grid-template-columns: 1fr;
     gap: 60px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .about-visual {
-    height: 430px;
   }
 
   .career-inner {
@@ -1663,7 +1656,7 @@ button {
     font-size: 56px;
   }
 
-  .about-visual {
+  .case-visual {
     height: 350px;
   }
 
