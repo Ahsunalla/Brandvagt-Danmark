@@ -63,7 +63,8 @@ const translations = {
       p2: "Vi kombinerer professionel tilstedeværelse med ansvarlighed og et skarpt blik for de detaljer, der gør forskellen.",
       points: ["Professionel service", "Fokus på sikkerhed", "Fleksible løsninger"],
       numberLabel: "timer",
-      caseCaption: "Hos HJM Recycling, Køge"
+      caseCaption: "Hos HJM Recycling, Køge",
+      caseCaption2: "Hos Egedal Kommune"
     },
     career: {
       label: "KARRIERE",
@@ -156,7 +157,8 @@ const translations = {
       p2: "We combine a professional presence with accountability and a sharp eye for the details that make the difference.",
       points: ["Professional service", "Focus on safety", "Flexible solutions"],
       numberLabel: "hours",
-      caseCaption: "At HJM Recycling, Køge"
+      caseCaption: "At HJM Recycling, Køge",
+      caseCaption2: "For Egedal Kommune"
     },
     career: {
       label: "CAREERS",
@@ -519,9 +521,15 @@ function render(lang) {
         <div class="container about-grid">
 
           <div class="about-visual">
-            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling i Køge" class="about-photo" />
+            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling i Køge" class="about-photo is-active" data-caption="${t.about.caseCaption}" />
+            <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="about-photo" data-caption="${t.about.caseCaption2}" />
 
             <div class="about-caption">${t.about.caseCaption}</div>
+
+            <div class="about-dots" aria-hidden="true">
+              <span class="about-dot is-active"></span>
+              <span class="about-dot"></span>
+            </div>
 
             <div class="about-box">
               <span class="large-number">24</span>
@@ -799,6 +807,67 @@ function mount(lang) {
   /* RADAR DETECTION SPOT (desktop only, moves on its own) */
 
   syncRadarPosition();
+
+
+  /* ABOUT SECTION CASE-PHOTO CAROUSEL */
+
+  setupAboutCarousel();
+}
+
+
+let aboutCarouselTimer = null;
+
+function setupAboutCarousel() {
+  const photos = Array.from(document.querySelectorAll(".about-photo"));
+  const captionEl = document.querySelector(".about-caption");
+  const dots = Array.from(document.querySelectorAll(".about-dot"));
+  if (photos.length < 2) return;
+
+  if (aboutCarouselTimer) {
+    clearInterval(aboutCarouselTimer);
+  }
+
+  let index = 0;
+  const DURATION = 5200;
+
+  function activate(nextIndex) {
+    photos[index].classList.remove("is-active");
+    if (dots[index]) dots[index].classList.remove("is-active");
+
+    const next = photos[nextIndex];
+    next.style.transition = "none";
+    next.style.transform = "scale(1)";
+    void next.offsetWidth;
+    next.style.transition = "";
+    next.classList.add("is-active");
+    if (dots[nextIndex]) dots[nextIndex].classList.add("is-active");
+
+    if (captionEl) {
+      captionEl.style.opacity = "0";
+      setTimeout(() => {
+        captionEl.textContent = next.dataset.caption || "";
+        captionEl.style.opacity = "1";
+      }, 250);
+    }
+
+    index = nextIndex;
+  }
+
+  function start() {
+    if (aboutCarouselTimer) clearInterval(aboutCarouselTimer);
+    aboutCarouselTimer = setInterval(() => {
+      activate((index + 1) % photos.length);
+    }, DURATION);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      activate(i);
+      start();
+    });
+  });
+
+  start();
 }
 
 
