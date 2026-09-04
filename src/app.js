@@ -754,6 +754,10 @@ function render(lang) {
             <stop offset="0%" stop-color="#ff6b7a"/>
             <stop offset="100%" stop-color="var(--red-dark)"/>
           </linearGradient>
+          <linearGradient id="guardSprayFan" x1="120" y1="113" x2="126" y2="165" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+          </linearGradient>
         </defs>
 
         <g class="guard-fire-scene">
@@ -818,11 +822,15 @@ function render(lang) {
                 <circle cx="101.5" cy="128" r="2.1" fill="#fff" opacity="0.9"/>
                 <circle cx="101.5" cy="128" r="2.1" fill="none" stroke="#191919" stroke-width="0.6"/>
                 <g class="guard-spray">
-                  <circle cx="116" cy="118" r="4.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
-                  <circle cx="119" cy="128" r="4" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
-                  <circle cx="121" cy="138" r="3.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
-                  <circle cx="122" cy="148" r="3" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
-                  <circle cx="123" cy="157" r="2.5" fill="#eaf3f8" stroke="#b9c8d1" stroke-width="0.6"/>
+                  <path d="M119 113 L98 160 L143 148 Z" fill="url(#guardSprayFan)"/>
+                  <circle cx="114" cy="126" r="2.8" fill="#f4fbff" opacity="0.85"/>
+                  <circle cx="126" cy="121" r="2.2" fill="#f4fbff" opacity="0.8"/>
+                  <circle cx="106" cy="140" r="2.6" fill="#f4fbff" opacity="0.75"/>
+                  <circle cx="131" cy="134" r="2.6" fill="#f4fbff" opacity="0.75"/>
+                  <circle cx="118" cy="146" r="2.2" fill="#f4fbff" opacity="0.7"/>
+                  <circle cx="136" cy="144" r="1.8" fill="#f4fbff" opacity="0.65"/>
+                  <circle cx="111" cy="154" r="2" fill="#f4fbff" opacity="0.6"/>
+                  <circle cx="124" cy="158" r="2.2" fill="#f4fbff" opacity="0.6"/>
                 </g>
               </g>
             </g>
