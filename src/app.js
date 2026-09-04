@@ -961,30 +961,21 @@ let guardScrollHandler = null;
 
 function setupGuardScrollSpy() {
   const mascot = document.querySelector(".guard-mascot");
-  const sections = Array.from(document.querySelectorAll("main section"));
-  if (!mascot || !sections.length) return;
+  if (!mascot) return;
 
   if (guardScrollHandler) {
     window.removeEventListener("scroll", guardScrollHandler);
   }
 
   guardScrollHandler = () => {
-    const centerY = window.innerHeight / 2;
-    let currentIndex = 0;
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
 
-    sections.forEach((section, i) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= centerY && rect.bottom >= centerY) {
-        currentIndex = i;
-      }
-    });
-
-    const lastIndex = sections.length - 1;
     let pose;
-    if (currentIndex === lastIndex - 1) {
-      pose = "pose-final";
-    } else if (currentIndex === lastIndex - 2) {
+    if (progress >= 0.18 && progress < 0.28) {
       pose = "pose-2";
+    } else if (progress >= 0.28 && progress < 0.4) {
+      pose = "pose-final";
     } else {
       pose = "pose-1";
     }
