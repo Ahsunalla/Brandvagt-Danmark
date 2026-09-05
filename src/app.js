@@ -13,7 +13,9 @@ const translations = {
       trust1: "beredskab",
       trust2: "fokus på sikkerhed",
       trust3: "landsdækkende",
-      scroll: "Scroll for at udforske"
+      scroll: "Scroll for at udforske",
+      callNow: "Ring nu",
+      callAria: "Ring til Brandvagt Danmark på 81 94 50 76"
     },
     intro: {
       label: "BRANDVAGT DANMARK",
@@ -107,7 +109,9 @@ const translations = {
       trust1: "on standby",
       trust2: "focus on safety",
       trust3: "nationwide",
-      scroll: "Scroll to explore"
+      scroll: "Scroll to explore",
+      callNow: "Call now",
+      callAria: "Call Brandvagt Danmark at 81 94 50 76"
     },
     intro: {
       label: "BRANDVAGT DANMARK",
@@ -288,6 +292,19 @@ function render(lang) {
         </div>
       </div>
     </header>
+
+    <a href="tel:+4581945076" class="call-fab" aria-label="${t.hero.callAria}">
+      <span class="call-fab-ping"></span>
+      <span class="call-fab-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="call-fab-text">
+        <span class="call-fab-label">${t.hero.callNow}</span>
+        <span class="call-fab-number">81 94 50 76</span>
+      </span>
+    </a>
 
 
     <!-- HERO -->
