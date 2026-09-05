@@ -887,10 +887,13 @@ function setupCaseCarousel() {
 }
 
 
+const RADAR_CYCLE_MS = 5500;
+const RADAR_VISIBLE_START_MS = RADAR_CYCLE_MS * 0.1;
+
 const RADAR_POSITIONS = [
-  { top: 38, left: 32, delay: -1.026, angle: 303.69 },
-  { top: 60, left: 35, delay: -1.774, angle: 236.31 },
-  { top: 30, left: 45, delay: -0.556, angle: 345.96 }
+  { top: 38, left: 32, delay: -1.411, angle: 303.69 },
+  { top: 60, left: 35, delay: -2.439, angle: 236.31 },
+  { top: 30, left: 45, delay: -0.765, angle: 345.96 }
 ];
 
 let currentRadarPos = null;
@@ -905,7 +908,7 @@ function getSweepAngleDeg() {
   if (!sweep) return null;
   const anims = sweep.getAnimations();
   if (!anims.length) return null;
-  const progress = (anims[0].currentTime % 4000) / 4000;
+  const progress = (anims[0].currentTime % RADAR_CYCLE_MS) / RADAR_CYCLE_MS;
   return progress * 360;
 }
 
@@ -942,7 +945,7 @@ function syncRadarPosition() {
 
   if (!radarIntervalStarted) {
     radarIntervalStarted = true;
-    scheduleNextRadarSwitch(4000);
+    scheduleNextRadarSwitch(RADAR_CYCLE_MS);
   }
 }
 
@@ -956,13 +959,13 @@ function scheduleNextRadarSwitch(delay) {
 function switchRadarPosition() {
   const fireContact = document.querySelector(".fire-contact");
   if (!fireContact || !isDesktopRadar()) {
-    scheduleNextRadarSwitch(4000);
+    scheduleNextRadarSwitch(RADAR_CYCLE_MS);
     return;
   }
 
   const currentAngle = getSweepAngleDeg();
   if (currentAngle === null) {
-    scheduleNextRadarSwitch(4000);
+    scheduleNextRadarSwitch(RADAR_CYCLE_MS);
     return;
   }
 
@@ -970,8 +973,8 @@ function switchRadarPosition() {
   const pos = choices[Math.floor(Math.random() * choices.length)];
   currentRadarPos = pos;
 
-  const timeToTarget = (((pos.angle - currentAngle + 360) % 360) / 360) * 4000;
-  const delayMs = timeToTarget - 400;
+  const timeToTarget = (((pos.angle - currentAngle + 360) % 360) / 360) * RADAR_CYCLE_MS;
+  const delayMs = timeToTarget - RADAR_VISIBLE_START_MS;
 
   fireContact.style.top = `${pos.top}%`;
   fireContact.style.left = `${pos.left}%`;
@@ -980,16 +983,16 @@ function switchRadarPosition() {
   fireContact.style.animation = "none";
   corners.forEach((corner) => { corner.style.animation = "none"; });
   void fireContact.offsetWidth;
-  fireContact.style.animation = "fire-detect-cycle 4s ease-in-out infinite";
+  fireContact.style.animation = `fire-detect-cycle ${RADAR_CYCLE_MS}ms ease-in-out infinite`;
   fireContact.style.animationDelay = `${delayMs}ms`;
   corners.forEach((corner) => {
-    corner.style.animation = "fire-lock 4s ease-in-out infinite";
+    corner.style.animation = `fire-lock ${RADAR_CYCLE_MS}ms ease-in-out infinite`;
     corner.style.animationDelay = `${delayMs}ms`;
   });
 
   // Wait for this cycle's full show-then-hide loop to finish naturally
   // before switching again, instead of cutting it off on a fixed timer.
-  scheduleNextRadarSwitch(delayMs + 4000);
+  scheduleNextRadarSwitch(delayMs + RADAR_CYCLE_MS);
 }
 
 window.addEventListener("resize", syncRadarPosition);
