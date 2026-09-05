@@ -400,17 +400,10 @@ button {
   font-size: 14px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
-}
-
-.call-fab:hover .call-fab-number,
-.call-fab:focus-visible .call-fab-number {
   max-height: 22px;
   opacity: 1;
   margin-top: 2px;
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
