@@ -303,25 +303,31 @@ button {
 
 .call-fab {
   position: fixed;
-  right: 28px;
-  bottom: 28px;
+  right: 36px;
+  bottom: 36px;
   z-index: 900;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 22px 10px 10px;
+  gap: 16px;
+  padding: 14px 30px 14px 14px;
   border-radius: 100px;
   background: linear-gradient(135deg, var(--red), var(--red-dark));
   color: white;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(210, 10, 46, 0.35), 0 2px 10px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 14px 38px rgba(210, 10, 46, 0.4), 0 4px 14px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  animation: call-fab-intro 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+}
+
+@keyframes call-fab-intro {
+  0% { transform: scale(0.4) translateY(30px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 .call-fab:hover,
 .call-fab:focus-visible {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 16px 40px rgba(210, 10, 46, 0.45), 0 6px 16px rgba(0, 0, 0, 0.22);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 20px 48px rgba(210, 10, 46, 0.5), 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .call-fab:active {
@@ -330,10 +336,10 @@ button {
 
 .call-fab-ping {
   position: absolute;
-  left: 10px;
+  left: 14px;
   top: 50%;
-  width: 44px;
-  height: 44px;
+  width: 58px;
+  height: 58px;
   transform: translateY(-50%);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
@@ -349,8 +355,8 @@ button {
 
 .call-fab-icon {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.18);
   display: flex;
@@ -360,8 +366,8 @@ button {
 }
 
 .call-fab-icon svg {
-  width: 19px;
-  height: 19px;
+  width: 25px;
+  height: 25px;
   transform-origin: center;
 }
 
@@ -380,20 +386,20 @@ button {
 .call-fab-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 .call-fab-label {
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 800;
   letter-spacing: 0.01em;
 }
 
 .call-fab-number {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -402,12 +408,16 @@ button {
 
 .call-fab:hover .call-fab-number,
 .call-fab:focus-visible .call-fab-number {
-  max-height: 20px;
+  max-height: 22px;
   opacity: 1;
   margin-top: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .call-fab {
+    animation: none;
+  }
+
   .call-fab-ping {
     animation: none;
     opacity: 0;
@@ -420,23 +430,29 @@ button {
 
 @media (max-width: 640px) {
   .call-fab {
-    right: 16px;
-    bottom: 16px;
-    padding: 8px 18px 8px 8px;
-    gap: 10px;
+    right: 18px;
+    bottom: 22px;
+    padding: 11px 22px 11px 11px;
+    gap: 12px;
   }
 
   .call-fab-ping,
   .call-fab-icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .call-fab-icon svg {
+    width: 21px;
+    height: 21px;
   }
 
   .call-fab-label {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .call-fab-number {
+    font-size: 12px;
     max-height: 20px;
     opacity: 1;
     margin-top: 2px;
