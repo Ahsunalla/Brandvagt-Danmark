@@ -942,16 +942,29 @@ function syncRadarPosition() {
 
   if (!radarIntervalStarted) {
     radarIntervalStarted = true;
-    setInterval(switchRadarPosition, 4000);
+    scheduleNextRadarSwitch(4000);
   }
+}
+
+let radarSwitchTimer = null;
+
+function scheduleNextRadarSwitch(delay) {
+  if (radarSwitchTimer) clearTimeout(radarSwitchTimer);
+  radarSwitchTimer = setTimeout(switchRadarPosition, delay);
 }
 
 function switchRadarPosition() {
   const fireContact = document.querySelector(".fire-contact");
-  if (!fireContact || !isDesktopRadar()) return;
+  if (!fireContact || !isDesktopRadar()) {
+    scheduleNextRadarSwitch(4000);
+    return;
+  }
 
   const currentAngle = getSweepAngleDeg();
-  if (currentAngle === null) return;
+  if (currentAngle === null) {
+    scheduleNextRadarSwitch(4000);
+    return;
+  }
 
   const choices = RADAR_POSITIONS.filter((p) => p !== currentRadarPos);
   const pos = choices[Math.floor(Math.random() * choices.length)];
@@ -973,6 +986,10 @@ function switchRadarPosition() {
     corner.style.animation = "fire-lock 4s ease-in-out infinite";
     corner.style.animationDelay = `${delayMs}ms`;
   });
+
+  // Wait for this cycle's full show-then-hide loop to finish naturally
+  // before switching again, instead of cutting it off on a fixed timer.
+  scheduleNextRadarSwitch(delayMs + 4000);
 }
 
 window.addEventListener("resize", syncRadarPosition);
