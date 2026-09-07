@@ -66,7 +66,8 @@ const translations = {
       points: ["Professionel service", "Fokus på sikkerhed", "Fleksible løsninger"],
       numberLabel: "timer",
       caseCaption: "Hos HJM Recycling, Køge",
-      caseCaption2: "Hos Egedal Kommune"
+      caseCaption2: "Hos Egedal Kommune",
+      caseCaption3: "Hos Arla"
     },
     career: {
       label: "KARRIERE",
@@ -162,7 +163,8 @@ const translations = {
       points: ["Professional service", "Focus on safety", "Flexible solutions"],
       numberLabel: "hours",
       caseCaption: "At HJM Recycling, Køge",
-      caseCaption2: "For Egedal Kommune"
+      caseCaption2: "For Egedal Kommune",
+      caseCaption3: "At Arla"
     },
     career: {
       label: "CAREERS",
@@ -398,11 +400,13 @@ function render(lang) {
           <div class="case-visual">
             <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling i Køge" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
             <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
+            <img src="/assets/case-arla.jpg" alt="Brandvagt ved varmt arbejde hos Arla" class="case-photo" data-caption="${t.about.caseCaption3}" />
 
             <div class="case-caption">${t.about.caseCaption}</div>
 
             <div class="case-dots" aria-hidden="true">
               <span class="case-dot is-active"></span>
+              <span class="case-dot"></span>
               <span class="case-dot"></span>
             </div>
 
