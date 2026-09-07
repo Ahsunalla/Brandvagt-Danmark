@@ -65,7 +65,7 @@ const translations = {
       p2: "Vi kombinerer professionel tilstedeværelse med ansvarlighed og et skarpt blik for de detaljer, der gør forskellen.",
       points: ["Professionel service", "Fokus på sikkerhed", "Fleksible løsninger"],
       numberLabel: "timer",
-      caseCaption: "Hos HJM Recycling, Køge",
+      caseCaption: "Hos HJM Recycling",
       caseCaption2: "Hos Egedal Kommune",
       caseCaption3: "Hos Arla"
     },
@@ -162,7 +162,7 @@ const translations = {
       p2: "We combine a professional presence with accountability and a sharp eye for the details that make the difference.",
       points: ["Professional service", "Focus on safety", "Flexible solutions"],
       numberLabel: "hours",
-      caseCaption: "At HJM Recycling, Køge",
+      caseCaption: "At HJM Recycling",
       caseCaption2: "For Egedal Kommune",
       caseCaption3: "At Arla"
     },
@@ -398,7 +398,7 @@ function render(lang) {
         <div class="container intro-grid">
 
           <div class="case-visual">
-            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling i Køge" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
+            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
             <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
             <img src="/assets/case-arla.jpg" alt="Brandvagt ved varmt arbejde hos Arla" class="case-photo" data-caption="${t.about.caseCaption3}" />
 
