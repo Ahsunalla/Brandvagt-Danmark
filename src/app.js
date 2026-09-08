@@ -848,7 +848,7 @@ function setupCaseCarousel() {
   }
 
   let index = 0;
-  const DURATION = 2800;
+  const DURATION = 3200;
 
   function activate(nextIndex) {
     photos[index].classList.remove("is-active");
