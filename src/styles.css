@@ -581,50 +581,6 @@ button {
   }
 }
 
-/* --- HUD viewfinder frame around the photo --- */
-
-.hud-corner {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  border: 3px solid #fff;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
-}
-
-.hud-tl { top: 30px; left: 30px; border-right: 0; border-bottom: 0; border-top-left-radius: 6px; }
-.hud-tr { top: 30px; right: 30px; border-left: 0; border-bottom: 0; border-top-right-radius: 6px; }
-.hud-bl { bottom: 30px; left: 30px; border-right: 0; border-top: 0; border-bottom-left-radius: 6px; }
-.hud-br { bottom: 30px; right: 30px; border-left: 0; border-top: 0; border-bottom-right-radius: 6px; }
-
-.hud-live {
-  position: absolute;
-  top: 64px;
-  left: 30px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: #fff;
-  font-family: "Manrope", sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-.hud-live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff3b3b;
-  box-shadow: 0 0 8px 1px rgba(255, 59, 59, 0.9);
-  animation: hud-live-blink 1.4s ease-in-out infinite;
-}
-
-@keyframes hud-live-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.25; }
-}
-
 .radar-sweep {
   position: absolute;
   inset: 0;
@@ -725,8 +681,7 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .radar-pulse,
-  .hud-live-dot {
+  .radar-pulse {
     animation: none;
   }
 

@@ -407,16 +407,6 @@ function renderHomeMain(t) {
             </div>
 
             <div class="hero-radar-fx" aria-hidden="true">
-              <span class="hud-corner hud-tl"></span>
-              <span class="hud-corner hud-tr"></span>
-              <span class="hud-corner hud-bl"></span>
-              <span class="hud-corner hud-br"></span>
-
-              <span class="hud-live">
-                <span class="hud-live-dot"></span>
-                LIVE
-              </span>
-
               <span class="radar-sweep"></span>
               <span class="radar-pulse"></span>
               <span class="radar-pulse"></span>
