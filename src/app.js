@@ -336,7 +336,7 @@ function renderHomeMain(t) {
         <div class="hero-photo-bg case-carousel" aria-hidden="true">
           <img src="/assets/case-hjm-recycling.jpg" alt="" class="case-photo is-active" />
           <img src="/assets/case-egedal-kommune.jpg" alt="" class="case-photo" />
-          <img src="/assets/case-arla.jpg" alt="" class="case-photo" />
+          <img src="/assets/case-arla.jpg" alt="" class="case-photo photo-arla" />
         </div>
 
         <div class="hero-photo-overlay" aria-hidden="true"></div>
@@ -434,7 +434,7 @@ function renderHomeMain(t) {
           <div class="case-visual case-carousel">
             <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
             <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
-            <img src="/assets/case-arla.jpg" alt="Brandvagt ved varmt arbejde hos Arla" class="case-photo" data-caption="${t.about.caseCaption3}" />
+            <img src="/assets/case-arla.jpg" alt="Brandvagt ved varmt arbejde hos Arla" class="case-photo photo-arla" data-caption="${t.about.caseCaption3}" />
 
             <div class="case-caption">${t.about.caseCaption}</div>
 
@@ -932,6 +932,7 @@ function setupCaseCarousel(root) {
     next.style.transform = "scale(1)";
     void next.offsetWidth;
     next.style.transition = "";
+    next.style.transform = "";
     next.classList.add("is-active");
     if (dots[nextIndex]) dots[nextIndex].classList.add("is-active");
 
