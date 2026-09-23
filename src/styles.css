@@ -567,25 +567,13 @@ button {
   animation-delay: 2.6s;
 }
 
-.radar-dot {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  margin: -4px 0 0 -4px;
-  background: var(--red);
-  border-radius: 50%;
-  animation: radar-blip 2s ease-in-out infinite;
-}
-
 @keyframes radar-pulse {
   0% {
     transform: scale(0.2);
-    opacity: 0.85;
+    opacity: 0.9;
   }
   70% {
-    opacity: 0.3;
+    opacity: 0.35;
   }
   100% {
     transform: scale(1);
@@ -593,13 +581,48 @@ button {
   }
 }
 
-@keyframes radar-blip {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(210, 10, 46, 0.45);
-  }
-  50% {
-    box-shadow: 0 0 0 14px rgba(210, 10, 46, 0);
-  }
+/* --- HUD viewfinder frame around the photo --- */
+
+.hud-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 3px solid #fff;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+}
+
+.hud-tl { top: 30px; left: 30px; border-right: 0; border-bottom: 0; border-top-left-radius: 6px; }
+.hud-tr { top: 30px; right: 30px; border-left: 0; border-bottom: 0; border-top-right-radius: 6px; }
+.hud-bl { bottom: 30px; left: 30px; border-right: 0; border-top: 0; border-bottom-left-radius: 6px; }
+.hud-br { bottom: 30px; right: 30px; border-left: 0; border-top: 0; border-bottom-right-radius: 6px; }
+
+.hud-live {
+  position: absolute;
+  top: 64px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hud-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3b3b;
+  box-shadow: 0 0 8px 1px rgba(255, 59, 59, 0.9);
+  animation: hud-live-blink 1.4s ease-in-out infinite;
+}
+
+@keyframes hud-live-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
 }
 
 .radar-sweep {
@@ -616,11 +639,13 @@ button {
   inset: 0;
   background: conic-gradient(
     from 0deg,
-    rgba(210, 10, 46, 0.24),
-    rgba(210, 10, 46, 0.05) 5%,
-    transparent 11%,
+    rgba(255, 255, 255, 0.85),
+    rgba(210, 10, 46, 0.55) 4%,
+    rgba(210, 10, 46, 0.16) 9%,
+    transparent 16%,
     transparent 100%
   );
+  mix-blend-mode: plus-lighter;
 }
 
 @keyframes radar-sweep-spin {
@@ -631,22 +656,31 @@ button {
   position: absolute;
   top: 38%;
   left: 32%;
-  width: 46px;
-  height: 46px;
-  margin: -23px 0 0 -23px;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
   opacity: 0;
   animation: fire-detect-cycle 5.5s ease-in-out infinite;
   animation-delay: -1.411s;
+}
+
+.fire-contact::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 59, 59, 0.35), transparent 70%);
 }
 
 .fire-aim-icon {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   transform: translate(-50%, -50%);
-  color: var(--black);
+  color: #fff;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 8px rgba(255, 59, 59, 0.6));
 }
 
 .aim-center-dot {
@@ -662,9 +696,10 @@ button {
 
 .fire-corner {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid var(--red);
+  width: 14px;
+  height: 14px;
+  border: 2.5px solid #ff3b3b;
+  filter: drop-shadow(0 0 5px rgba(255, 59, 59, 0.7));
   animation: fire-lock 5.5s ease-in-out infinite;
   animation-delay: -1.411s;
 }
@@ -682,15 +717,16 @@ button {
 }
 
 @keyframes fire-lock {
-  0%, 8% { transform: scale(1.9); }
-  12% { transform: scale(1); }
+  0%, 8% { transform: scale(2.4); }
+  11% { transform: scale(0.85); }
+  14% { transform: scale(1); }
   62% { transform: scale(1); }
-  72%, 100% { transform: scale(0.85); }
+  72%, 100% { transform: scale(0.75); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .radar-pulse,
-  .radar-dot {
+  .hud-live-dot {
     animation: none;
   }
 

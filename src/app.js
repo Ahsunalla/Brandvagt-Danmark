@@ -407,11 +407,20 @@ function renderHomeMain(t) {
             </div>
 
             <div class="hero-radar-fx" aria-hidden="true">
+              <span class="hud-corner hud-tl"></span>
+              <span class="hud-corner hud-tr"></span>
+              <span class="hud-corner hud-bl"></span>
+              <span class="hud-corner hud-br"></span>
+
+              <span class="hud-live">
+                <span class="hud-live-dot"></span>
+                LIVE
+              </span>
+
               <span class="radar-sweep"></span>
               <span class="radar-pulse"></span>
               <span class="radar-pulse"></span>
               <span class="radar-pulse"></span>
-              <span class="radar-dot"></span>
 
               <span class="fire-contact">
                 <svg class="fire-aim-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
