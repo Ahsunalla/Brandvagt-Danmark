@@ -2,7 +2,7 @@ const app = document.getElementById("app");
 
 const translations = {
   da: {
-    nav: { services: "Ydelser", whyUs: "Hvorfor os", about: "Om os", contact: "Kontakt", cta: "Få et tilbud", menuAria: "Åbn menu" },
+    nav: { home: "Forside", services: "Ydelser", whyUs: "Hvorfor os", about: "Om os", contact: "Kontakt", cta: "Få et tilbud", menuAria: "Åbn menu" },
     hero: {
       eyebrow: "PROFESSIONEL BRANDVAGT I DANMARK",
       h1a: "Når sikkerheden",
@@ -99,7 +99,7 @@ const translations = {
     }
   },
   en: {
-    nav: { services: "Services", whyUs: "Why us", about: "About us", contact: "Contact", cta: "Get a quote", menuAria: "Open menu" },
+    nav: { home: "Home", services: "Services", whyUs: "Why us", about: "About us", contact: "Contact", cta: "Get a quote", menuAria: "Open menu" },
     hero: {
       eyebrow: "PROFESSIONAL FIRE WATCH IN DENMARK",
       h1a: "When safety",
@@ -271,6 +271,7 @@ function renderNavbar(lang, t) {
         </a>
 
         <nav class="desktop-nav">
+          <a href="${pagePath("home")}">${t.nav.home}</a>
           <a href="${pagePath("services")}">${t.nav.services}</a>
           <a href="${pagePath("why-us")}">${t.nav.whyUs}</a>
           <a href="${pagePath("about")}">${t.nav.about}</a>
@@ -295,6 +296,7 @@ function renderNavbar(lang, t) {
       </div>
 
       <div class="mobile-menu" id="mobileMenu">
+        <a href="${pagePath("home")}">${t.nav.home}</a>
         <a href="${pagePath("services")}">${t.nav.services}</a>
         <a href="${pagePath("why-us")}">${t.nav.whyUs}</a>
         <a href="${pagePath("about")}">${t.nav.about}</a>
