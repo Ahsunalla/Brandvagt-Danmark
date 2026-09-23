@@ -387,6 +387,13 @@ function renderHomeMain(t) {
 
           <div class="hero-visual">
 
+            <div class="hero-radar-ambient" aria-hidden="true">
+              <span class="radar-sweep"></span>
+              <span class="radar-pulse"></span>
+              <span class="radar-pulse"></span>
+              <span class="radar-pulse"></span>
+            </div>
+
             <div class="hero-photo-ring">
               <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
               <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
@@ -407,11 +414,6 @@ function renderHomeMain(t) {
             </div>
 
             <div class="hero-radar-fx" aria-hidden="true">
-              <span class="radar-sweep"></span>
-              <span class="radar-pulse"></span>
-              <span class="radar-pulse"></span>
-              <span class="radar-pulse"></span>
-
               <span class="fire-contact">
                 <svg class="fire-aim-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.6"/>

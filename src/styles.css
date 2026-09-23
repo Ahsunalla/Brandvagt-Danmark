@@ -488,13 +488,25 @@ button {
   width: min(100%, 480px);
   aspect-ratio: 1 / 1;
   margin: 0 auto;
-  border: 1px solid rgba(21, 21, 21, 0.18);
+}
+
+.hero-radar-ambient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 172%;
+  height: 172%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(21, 21, 21, 0.14);
   border-radius: 50%;
 }
 
 .hero-photo-ring {
   position: absolute;
   inset: 42px;
+  z-index: 2;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 0 6px var(--cream), 0 30px 60px -15px rgba(0, 0, 0, 0.35);
@@ -546,6 +558,7 @@ button {
 .hero-radar-fx {
   position: absolute;
   inset: 0;
+  z-index: 3;
   pointer-events: none;
 }
 
