@@ -333,103 +333,75 @@ function renderCallFab(t) {
 function renderHomeMain(t) {
   return `
       <section class="hero">
-        <div class="hero-inner">
+        <div class="hero-background" aria-hidden="true">
+          <span class="radar-sweep"></span>
+          <span class="radar-pulse"></span>
+          <span class="radar-pulse"></span>
+          <span class="radar-pulse"></span>
+          <span class="radar-dot"></span>
 
-          <div class="hero-content">
+          <span class="fire-contact">
+            <svg class="fire-aim-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="12" y1="1" x2="12" y2="5.5" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="12" y1="18.5" x2="12" y2="23" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="1" y1="12" x2="5.5" y2="12" stroke="currentColor" stroke-width="1.6"/>
+              <line x1="18.5" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.6"/>
+              <circle class="aim-center-dot" cx="12" cy="12" r="1.6" fill="currentColor"/>
+            </svg>
+            <span class="fire-corner tl"></span>
+            <span class="fire-corner tr"></span>
+            <span class="fire-corner bl"></span>
+            <span class="fire-corner br"></span>
+          </span>
+        </div>
 
-            <div class="eyebrow">
-              <span class="status-dot"></span>
-              ${t.hero.eyebrow}
-            </div>
+        <div class="hero-content">
 
-            <h1>
-              ${t.hero.h1a}
-              <span>${t.hero.h1b}</span>
-            </h1>
-
-            <p class="hero-description">
-              ${t.hero.description}
-            </p>
-
-            <div class="hero-actions">
-              <a href="${pagePath("contact")}" class="button button-primary">
-                ${t.hero.ctaPrimary}
-                <span>→</span>
-              </a>
-
-              <a href="${pagePath("services")}" class="button button-secondary">
-                ${t.hero.ctaSecondary}
-              </a>
-            </div>
-
-            <div class="hero-trust">
-              <div class="trust-item">
-                <strong>24/7</strong>
-                <span>${t.hero.trust1}</span>
-              </div>
-
-              <div class="trust-line"></div>
-
-              <div class="trust-item">
-                <strong>100%</strong>
-                <span>${t.hero.trust2}</span>
-              </div>
-
-              <div class="trust-line"></div>
-
-              <div class="trust-item">
-                <strong>DK</strong>
-                <span>${t.hero.trust3}</span>
-              </div>
-            </div>
-
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            ${t.hero.eyebrow}
           </div>
 
-          <div class="hero-visual">
+          <h1>
+            ${t.hero.h1a}
+            <span>${t.hero.h1b}</span>
+          </h1>
 
-            <div class="hero-radar-ambient" aria-hidden="true">
-              <span class="radar-sweep"></span>
-              <span class="radar-pulse"></span>
-              <span class="radar-pulse"></span>
-              <span class="radar-pulse"></span>
+          <p class="hero-description">
+            ${t.hero.description}
+          </p>
+
+          <div class="hero-actions">
+            <a href="${pagePath("contact")}" class="button button-primary">
+              ${t.hero.ctaPrimary}
+              <span>→</span>
+            </a>
+
+            <a href="${pagePath("services")}" class="button button-secondary">
+              ${t.hero.ctaSecondary}
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <strong>24/7</strong>
+              <span>${t.hero.trust1}</span>
             </div>
 
-            <div class="hero-photo-ring">
-              <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
-              <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
-              <img src="/assets/case-arla.jpg" alt="Brandvagt ved varmt arbejde hos Arla" class="case-photo" data-caption="${t.about.caseCaption3}" />
+            <div class="trust-line"></div>
+
+            <div class="trust-item">
+              <strong>100%</strong>
+              <span>${t.hero.trust2}</span>
             </div>
 
-            <div class="case-caption hero-photo-caption">${t.about.caseCaption}</div>
+            <div class="trust-line"></div>
 
-            <div class="case-dots hero-photo-dots" aria-hidden="true">
-              <span class="case-dot is-active"></span>
-              <span class="case-dot"></span>
-              <span class="case-dot"></span>
+            <div class="trust-item">
+              <strong>DK</strong>
+              <span>${t.hero.trust3}</span>
             </div>
-
-            <div class="hero-stat-badge">
-              <span class="large-number">24</span>
-              <span class="number-label">${t.about.numberLabel}</span>
-            </div>
-
-            <div class="hero-radar-fx" aria-hidden="true">
-              <span class="fire-contact">
-                <svg class="fire-aim-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.6"/>
-                  <line x1="12" y1="1" x2="12" y2="5.5" stroke="currentColor" stroke-width="1.6"/>
-                  <line x1="12" y1="18.5" x2="12" y2="23" stroke="currentColor" stroke-width="1.6"/>
-                  <line x1="1" y1="12" x2="5.5" y2="12" stroke="currentColor" stroke-width="1.6"/>
-                  <line x1="18.5" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="1.6"/>
-                  <circle class="aim-center-dot" cx="12" cy="12" r="1.6" fill="currentColor"/>
-                </svg>
-                <span class="fire-corner tl"></span>
-                <span class="fire-corner tr"></span>
-                <span class="fire-corner bl"></span>
-                <span class="fire-corner br"></span>
-              </span>
-            </div>
-
           </div>
 
         </div>
@@ -443,7 +415,26 @@ function renderHomeMain(t) {
 
       <!-- INTRO -->
       <section class="intro section">
-        <div class="container">
+        <div class="container intro-grid">
+
+          <div class="case-visual">
+            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
+            <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
+            <img src="/assets/case-arla.jpg" alt="Brandvagt ved varmt arbejde hos Arla" class="case-photo" data-caption="${t.about.caseCaption3}" />
+
+            <div class="case-caption">${t.about.caseCaption}</div>
+
+            <div class="case-dots" aria-hidden="true">
+              <span class="case-dot is-active"></span>
+              <span class="case-dot"></span>
+              <span class="case-dot"></span>
+            </div>
+
+            <div class="case-box">
+              <span class="large-number">24</span>
+              <span class="number-label">${t.about.numberLabel}</span>
+            </div>
+          </div>
 
           <div class="intro-content">
             <div class="section-label">
