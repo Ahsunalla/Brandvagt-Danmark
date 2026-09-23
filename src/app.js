@@ -234,16 +234,30 @@ const serviceIcons = [
 
 const iconClasses = ["icon-flame", "icon-digger", "icon-spotlight", "icon-building"];
 
-function render(lang) {
-  const t = translations[lang];
+const PAGE_SLUGS = {
+  services: "ydelser",
+  "why-us": "hvorfor-os",
+  about: "om-os",
+  career: "karriere",
+  contact: "kontakt"
+};
 
+function pagePath(key) {
+  return key === "home" ? "/" : `/${PAGE_SLUGS[key]}`;
+}
+
+function getPageKey() {
+  const path = window.location.pathname.replace(/\.html$/, "");
+  const slug = path.split("/").filter(Boolean).pop() || "";
+  const bySlug = Object.entries(PAGE_SLUGS).find(([, s]) => s === slug);
+  return bySlug ? bySlug[0] : "home";
+}
+
+function renderNavbar(lang, t) {
   return `
-  <div class="site">
-
-    <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-inner">
-        <a href="#top" class="brand" aria-label="Brandvagt Danmark ApS">
+        <a href="${pagePath("home")}" class="brand" aria-label="Brandvagt Danmark ApS">
           <span class="brand-chip">
             <span class="brand-logo">
               <img src="/assets/brandvagt-shield.png" alt="" class="brand-shield" />
@@ -257,11 +271,11 @@ function render(lang) {
         </a>
 
         <nav class="desktop-nav">
-          <a href="#services">${t.nav.services}</a>
-          <a href="#why-us">${t.nav.whyUs}</a>
-          <a href="#about">${t.nav.about}</a>
-          <a href="#career">${t.career.navLabel}</a>
-          <a href="#contact">${t.nav.contact}</a>
+          <a href="${pagePath("services")}">${t.nav.services}</a>
+          <a href="${pagePath("why-us")}">${t.nav.whyUs}</a>
+          <a href="${pagePath("about")}">${t.nav.about}</a>
+          <a href="${pagePath("career")}">${t.career.navLabel}</a>
+          <a href="${pagePath("contact")}">${t.nav.contact}</a>
         </nav>
 
         <div class="lang-switch" role="group" aria-label="Sprog / Language">
@@ -269,7 +283,7 @@ function render(lang) {
           <button type="button" class="lang-btn${lang === "en" ? " active" : ""}" data-lang="en">EN</button>
         </div>
 
-        <a href="#contact" class="nav-button">
+        <a href="${pagePath("contact")}" class="nav-button">
           ${t.nav.cta}
           <span>↗</span>
         </a>
@@ -281,12 +295,12 @@ function render(lang) {
       </div>
 
       <div class="mobile-menu" id="mobileMenu">
-        <a href="#services">${t.nav.services}</a>
-        <a href="#why-us">${t.nav.whyUs}</a>
-        <a href="#about">${t.nav.about}</a>
-        <a href="#career">${t.career.navLabel}</a>
-        <a href="#contact">${t.nav.contact}</a>
-        <a href="#contact" class="mobile-cta">${t.nav.cta} →</a>
+        <a href="${pagePath("services")}">${t.nav.services}</a>
+        <a href="${pagePath("why-us")}">${t.nav.whyUs}</a>
+        <a href="${pagePath("about")}">${t.nav.about}</a>
+        <a href="${pagePath("career")}">${t.career.navLabel}</a>
+        <a href="${pagePath("contact")}">${t.nav.contact}</a>
+        <a href="${pagePath("contact")}" class="mobile-cta">${t.nav.cta} →</a>
 
         <div class="lang-switch lang-switch-mobile" role="group" aria-label="Sprog / Language">
           <button type="button" class="lang-btn${lang === "da" ? " active" : ""}" data-lang="da">Dansk</button>
@@ -294,7 +308,11 @@ function render(lang) {
         </div>
       </div>
     </header>
+  `;
+}
 
+function renderCallFab(t) {
+  return `
     <a href="tel:+4581945076" class="call-fab" aria-label="${t.hero.callAria}">
       <span class="call-fab-ping"></span>
       <span class="call-fab-icon">
@@ -307,11 +325,11 @@ function render(lang) {
         <span class="call-fab-number">81 94 50 76</span>
       </span>
     </a>
+  `;
+}
 
-
-    <!-- HERO -->
-    <main id="top">
-
+function renderHomeMain(t) {
+  return `
       <section class="hero">
         <div class="hero-background" aria-hidden="true">
           <span class="radar-sweep"></span>
@@ -353,12 +371,12 @@ function render(lang) {
           </p>
 
           <div class="hero-actions">
-            <a href="#contact" class="button button-primary">
+            <a href="${pagePath("contact")}" class="button button-primary">
               ${t.hero.ctaPrimary}
               <span>→</span>
             </a>
 
-            <a href="#services" class="button button-secondary">
+            <a href="${pagePath("services")}" class="button button-secondary">
               ${t.hero.ctaSecondary}
             </a>
           </div>
@@ -432,7 +450,7 @@ function render(lang) {
 
             <p>${t.intro.p2}</p>
 
-            <a href="#about" class="text-link">
+            <a href="${pagePath("about")}" class="text-link">
               ${t.intro.link} <span>→</span>
             </a>
           </div>
@@ -441,6 +459,38 @@ function render(lang) {
       </section>
 
 
+      <!-- DARK STATEMENT -->
+      <section class="statement">
+        <div class="statement-glow"></div>
+
+        <div class="container statement-content">
+
+          <div class="section-label light">
+            <span>—</span>
+            <span class="label-line"></span>
+            <span>${t.statement.label}</span>
+          </div>
+
+          <h2>
+            ${t.statement.h2a}
+            <br>
+            <span>${t.statement.h2b}</span>
+          </h2>
+
+          <p>${t.statement.p}</p>
+
+          <a href="${pagePath("contact")}" class="button button-light">
+            ${t.statement.cta}
+            <span>→</span>
+          </a>
+
+        </div>
+      </section>
+  `;
+}
+
+function renderServicesMain(t) {
+  return `
       <!-- SERVICES -->
       <section class="services section" id="services">
         <div class="container">
@@ -448,7 +498,7 @@ function render(lang) {
           <div class="section-header">
             <div>
               <div class="section-label">
-                <span>02</span>
+                <span>01</span>
                 <span class="label-line"></span>
                 <span>${t.services.label}</span>
               </div>
@@ -476,7 +526,7 @@ function render(lang) {
 
               <p>${card.desc}</p>
 
-              <a href="#contact">
+              <a href="${pagePath("contact")}">
                 ${t.services.cardLink} <span>↗</span>
               </a>
             </article>
@@ -484,43 +534,17 @@ function render(lang) {
           </div>
         </div>
       </section>
+  `;
+}
 
-
-      <!-- DARK STATEMENT -->
-      <section class="statement">
-        <div class="statement-glow"></div>
-
-        <div class="container statement-content">
-
-          <div class="section-label light">
-            <span>03</span>
-            <span class="label-line"></span>
-            <span>${t.statement.label}</span>
-          </div>
-
-          <h2>
-            ${t.statement.h2a}
-            <br>
-            <span>${t.statement.h2b}</span>
-          </h2>
-
-          <p>${t.statement.p}</p>
-
-          <a href="#contact" class="button button-light">
-            ${t.statement.cta}
-            <span>→</span>
-          </a>
-
-        </div>
-      </section>
-
-
+function renderWhyUsMain(t) {
+  return `
       <!-- WHY US -->
       <section class="why-us section" id="why-us">
         <div class="container">
 
           <div class="section-label">
-            <span>04</span>
+            <span>02</span>
             <span class="label-line"></span>
             <span>${t.whyUs.label}</span>
           </div>
@@ -552,8 +576,11 @@ function render(lang) {
           </div>
         </div>
       </section>
+  `;
+}
 
-
+function renderAboutMain(t) {
+  return `
       <!-- ABOUT -->
       <section class="about section" id="about">
         <div class="container">
@@ -561,7 +588,7 @@ function render(lang) {
           <div class="about-content">
 
             <div class="section-label">
-              <span>05</span>
+              <span>03</span>
               <span class="label-line"></span>
               <span>${t.about.label}</span>
             </div>
@@ -588,15 +615,18 @@ function render(lang) {
 
         </div>
       </section>
+  `;
+}
 
-
+function renderCareerMain(t) {
+  return `
       <!-- CAREER -->
       <section class="career section" id="career">
         <div class="container career-inner">
 
           <div class="career-copy">
             <div class="section-label">
-              <span>06</span>
+              <span>04</span>
               <span class="label-line"></span>
               <span>${t.career.label}</span>
             </div>
@@ -625,8 +655,11 @@ function render(lang) {
 
         </div>
       </section>
+  `;
+}
 
-
+function renderContactMain(t) {
+  return `
       <!-- CTA -->
       <section class="contact" id="contact">
 
@@ -634,7 +667,7 @@ function render(lang) {
 
           <div class="contact-copy">
             <div class="section-label light">
-              <span>07</span>
+              <span>05</span>
               <span class="label-line"></span>
               <span>${t.contact.label}</span>
             </div>
@@ -676,11 +709,20 @@ function render(lang) {
         </div>
 
       </section>
+  `;
+}
 
-    </main>
+const PAGE_MAIN_RENDERERS = {
+  home: renderHomeMain,
+  services: renderServicesMain,
+  "why-us": renderWhyUsMain,
+  about: renderAboutMain,
+  career: renderCareerMain,
+  contact: renderContactMain
+};
 
-
-    <!-- FOOTER -->
+function renderFooter(lang, t) {
+  return `
     <footer class="footer">
 
       <div class="container">
@@ -715,11 +757,11 @@ function render(lang) {
 
             <div>
               <span>${t.footer.menuLabel}</span>
-              <a href="#services">${t.nav.services}</a>
-              <a href="#why-us">${t.nav.whyUs}</a>
-              <a href="#about">${t.nav.about}</a>
-              <a href="#career">${t.career.navLabel}</a>
-              <a href="#contact">${t.nav.contact}</a>
+              <a href="${pagePath("services")}">${t.nav.services}</a>
+              <a href="${pagePath("why-us")}">${t.nav.whyUs}</a>
+              <a href="${pagePath("about")}">${t.nav.about}</a>
+              <a href="${pagePath("career")}">${t.career.navLabel}</a>
+              <a href="${pagePath("contact")}">${t.nav.contact}</a>
             </div>
 
             <div>
@@ -746,6 +788,26 @@ function render(lang) {
       </div>
 
     </footer>
+  `;
+}
+
+function render(lang) {
+  const t = translations[lang];
+  const page = getPageKey();
+  const renderMain = PAGE_MAIN_RENDERERS[page] || PAGE_MAIN_RENDERERS.home;
+
+  return `
+  <div class="site">
+
+    ${renderNavbar(lang, t)}
+
+    ${renderCallFab(t)}
+
+    <main id="top">
+      ${renderMain(t)}
+    </main>
+
+    ${renderFooter(lang, t)}
 
   </div>
   `;
@@ -786,7 +848,7 @@ function mount(lang) {
   });
 
 
-  /* SMOOTH SCROLL */
+  /* SMOOTH SCROLL (in-page anchors only, e.g. #top) */
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (event) {
@@ -824,12 +886,12 @@ function mount(lang) {
   });
 
 
-  /* RADAR DETECTION SPOT (desktop only, moves on its own) */
+  /* RADAR DETECTION SPOT (home page only, desktop only, moves on its own) */
 
   syncRadarPosition();
 
 
-  /* CASE-PHOTO CAROUSEL */
+  /* CASE-PHOTO CAROUSEL (home page only) */
 
   setupCaseCarousel();
 }
