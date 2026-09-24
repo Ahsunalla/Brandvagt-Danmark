@@ -693,7 +693,7 @@ const aboutScene = `
 `;
 
 const careerScene = `
-        <path d="M240 130 L296 220 L184 220 Z" fill="url(#accentFill)"/>
+        <path d="M260 130 L316 220 L204 220 Z" fill="url(#accentFill)"/>
         <rect x="204" y="220" width="112" height="190" rx="18" fill="var(--cream)"/>
         <circle cx="260" cy="278" r="26" fill="#151515"/>
         <circle cx="260" cy="278" r="26" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3"/>
