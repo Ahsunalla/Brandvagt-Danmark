@@ -854,13 +854,13 @@ function renderCareerMain(t) {
               <h3>${t.career.cardTitle}</h3>
               <p>${t.career.cardP}</p>
 
-              <a href="mailto:job@brandvagtdanmark.dk?subject=Ansøgning" class="career-button">
+              <a href="mailto:kontakt@bvdanmark.dk?subject=Ansøgning" class="career-button">
                 ${t.career.applyBtn}
                 <span>→</span>
               </a>
 
-              <a href="mailto:job@brandvagtdanmark.dk" class="email-link">
-                job@brandvagtdanmark.dk
+              <a href="mailto:kontakt@bvdanmark.dk" class="email-link">
+                kontakt@bvdanmark.dk
               </a>
             </div>
 
@@ -920,8 +920,8 @@ function renderContactMain(t) {
                 <span>→</span>
               </a>
 
-              <a href="mailto:kontakt@brandvagtdanmark.dk" class="email-link">
-                kontakt@brandvagtdanmark.dk
+              <a href="mailto:kontakt@bvdanmark.dk" class="email-link">
+                kontakt@bvdanmark.dk
               </a>
 
             </div>
@@ -989,9 +989,10 @@ function renderFooter(lang, t) {
             <div>
               <span>${t.footer.contactLabel}</span>
               <a href="tel:+4581945076">+45 81 94 50 76</a>
-              <a href="mailto:kontakt@brandvagtdanmark.dk">
-                kontakt@brandvagtdanmark.dk
+              <a href="mailto:kontakt@bvdanmark.dk">
+                kontakt@bvdanmark.dk
               </a>
+              <span class="footer-cvr">CVR: 46760069</span>
             </div>
 
           </div>

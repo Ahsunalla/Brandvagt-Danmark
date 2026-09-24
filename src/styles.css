@@ -1762,6 +1762,14 @@ button {
   color: white;
 }
 
+.footer-links .footer-cvr {
+  font-size: 12px;
+  color: #77746d;
+  letter-spacing: normal;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 22px;
