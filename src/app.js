@@ -716,10 +716,10 @@ const contactScene = `
         <rect x="190" y="250" width="140" height="260" rx="26" fill="#1c1c1c" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
         <rect x="210" y="278" width="100" height="170" rx="10" fill="url(#accentFill)"/>
         <rect x="245" y="465" width="30" height="6" rx="3" fill="#ffffff" fill-opacity="0.4"/>
-        <g transform="rotate(-30 260 363)">
-          <rect x="242" y="303" width="36" height="120" rx="18" fill="#ffffff"/>
-          <circle cx="260" cy="308" r="22" fill="#ffffff"/>
-          <circle cx="260" cy="418" r="22" fill="#ffffff"/>
+        <g transform="translate(226.4 327.8) scale(3.2)">
+          <g class="phone-ring">
+            <path fill="#ffffff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </g>
         </g>
 `;
 

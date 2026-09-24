@@ -1377,13 +1377,29 @@ button {
   50% { stroke-opacity: 0.6; }
 }
 
+.phone-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: phone-ring-wiggle 3s ease-in-out infinite;
+}
+
+@keyframes phone-ring-wiggle {
+  0%, 22%, 100% { transform: rotate(0deg); }
+  4%  { transform: rotate(-18deg); }
+  8%  { transform: rotate(14deg); }
+  12% { transform: rotate(-11deg); }
+  16% { transform: rotate(8deg); }
+  20% { transform: rotate(-4deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gfx-ring,
   .gfx-badge-dot,
   .seal-shine,
   .rocket-flame,
   .rocket-spark,
-  .contact-arc {
+  .contact-arc,
+  .phone-ring {
     animation: none;
   }
 
