@@ -815,6 +815,41 @@ button {
   height: auto;
 }
 
+.shield-radar-sweep {
+  position: absolute;
+  z-index: 1;
+  top: 39.8%;
+  left: 50%;
+  width: 84.6%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.shield-radar-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 0deg,
+    rgba(210, 10, 46, 0.55),
+    rgba(210, 10, 46, 0.12) 8%,
+    transparent 16%,
+    transparent 100%
+  );
+  animation: radar-sweep-spin var(--sweep-duration, 5.5s) linear infinite;
+  animation-direction: var(--sweep-direction, normal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shield-radar-sweep::before {
+    animation: none;
+  }
+}
+
 .intro-ring {
   animation: intro-ring-pulse 6s ease-in-out infinite;
   transform-box: fill-box;

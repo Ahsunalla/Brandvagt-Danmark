@@ -477,6 +477,8 @@ function renderHomeMain(t) {
               </g>
             </svg>
 
+            <div class="shield-radar-sweep" style="--sweep-duration:5.5s"></div>
+
             <div class="intro-visual-badge">
               <span class="intro-visual-dot"></span>
               ${t.intro.watchLabel}
@@ -625,6 +627,10 @@ function gfxBadge(className, text) {
   `;
 }
 
+function radarSweep(duration, direction) {
+  return `<div class="shield-radar-sweep" style="--sweep-duration:${duration};--sweep-direction:${direction || "normal"}"></div>`;
+}
+
 const whyUsScene = `
         <g>
           <circle class="gfx-signal" cx="260" cy="25" r="4" fill="var(--red)" style="animation-delay:0s"/>
@@ -700,6 +706,7 @@ function renderWhyUsMain(t) {
 
             <div class="why-visual gfx-visual">
               ${shieldEmblem(whyUsScene)}
+              ${radarSweep("4s")}
               ${gfxBadge("gfx-badge", t.whyUs.badgeLabel)}
             </div>
 
@@ -745,6 +752,7 @@ function renderAboutMain(t) {
 
             <div class="about-visual gfx-visual">
               ${shieldEmblem(aboutScene)}
+              ${radarSweep("7s")}
               ${gfxBadge("gfx-badge", t.about.badgeLabel)}
             </div>
 
@@ -791,6 +799,7 @@ function renderCareerMain(t) {
 
           <div class="career-visual gfx-visual">
             ${shieldEmblem(careerScene)}
+            ${radarSweep("3.5s")}
             ${gfxBadge("gfx-badge", t.career.badgeLabel)}
           </div>
 
@@ -841,6 +850,7 @@ function renderContactMain(t) {
 
           <div class="contact-visual gfx-visual">
             ${shieldEmblem(contactScene)}
+            ${radarSweep("3s", "reverse")}
             ${gfxBadge("gfx-badge", t.contact.badgeLabel)}
           </div>
 
