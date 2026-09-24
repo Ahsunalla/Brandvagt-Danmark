@@ -148,26 +148,26 @@ button {
 
 .brand-wordmark strong {
   font-family: "Manrope", sans-serif;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--black);
 }
 
 .brand-wordmark .brand-country {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.32em;
-  color: #6d6a63;
-  margin-top: 5px;
+  letter-spacing: 0.22em;
+  color: #4a4741;
+  margin-top: 4px;
 }
 
 .brand-wordmark .brand-suffix {
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   color: #9a968d;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .brand-chip {

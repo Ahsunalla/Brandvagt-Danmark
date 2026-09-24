@@ -274,7 +274,7 @@ function renderNavbar(lang, t) {
               <span class="brand-wordmark">
                 <strong>BRANDVAGT</strong>
                 <span class="brand-country">DANMARK</span>
-                <span class="brand-suffix">ApS</span>
+                <span class="brand-suffix">— ApS —</span>
               </span>
             </span>
           </span>
@@ -960,7 +960,7 @@ function renderFooter(lang, t) {
                   <span class="brand-wordmark">
                     <strong>BRANDVAGT</strong>
                     <span class="brand-country">DANMARK</span>
-                    <span class="brand-suffix">ApS</span>
+                    <span class="brand-suffix">— ApS —</span>
                   </span>
                 </span>
               </span>
