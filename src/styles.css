@@ -1295,12 +1295,6 @@ button {
   animation-delay: 1.2s;
 }
 
-.gfx-signal {
-  animation: intro-window-pulse 2.6s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
 .gfx-badge {
   position: absolute;
   z-index: 2;
@@ -1328,22 +1322,45 @@ button {
   animation: intro-badge-blink 1.6s ease-in-out infinite;
 }
 
-.why-orbit {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: why-orbit-spin 24s linear infinite;
+.clock-minute {
+  transform-box: view-box;
+  transform-origin: 260px 270px;
+  animation: clock-sweep 18s linear infinite;
 }
 
-@keyframes why-orbit-spin {
+@keyframes clock-sweep {
   to { transform: rotate(360deg); }
 }
 
-.about-path {
-  animation: about-path-flow 2.4s linear infinite;
+.seal-shine {
+  animation: seal-shine-sweep 4s ease-in-out infinite;
 }
 
-@keyframes about-path-flow {
-  to { stroke-dashoffset: -100; }
+@keyframes seal-shine-sweep {
+  0% { transform: translateX(0); }
+  18% { transform: translateX(650px); }
+  100% { transform: translateX(650px); }
+}
+
+.rocket-flame {
+  transform-box: fill-box;
+  transform-origin: top center;
+  animation: rocket-flame-flicker 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes rocket-flame-flicker {
+  0% { transform: scaleY(0.85) scaleX(0.95); opacity: 0.85; }
+  100% { transform: scaleY(1.15) scaleX(1.05); opacity: 1; }
+}
+
+.rocket-spark {
+  animation: rocket-spark-rise 2s ease-out infinite;
+}
+
+@keyframes rocket-spark-rise {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(-190px); opacity: 0; }
 }
 
 .contact-arc {
@@ -1358,10 +1375,11 @@ button {
 
 @media (prefers-reduced-motion: reduce) {
   .gfx-ring,
-  .gfx-signal,
   .gfx-badge-dot,
-  .why-orbit,
-  .about-path,
+  .clock-minute,
+  .seal-shine,
+  .rocket-flame,
+  .rocket-spark,
   .contact-arc {
     animation: none;
   }

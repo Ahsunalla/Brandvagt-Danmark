@@ -627,65 +627,99 @@ function gfxBadge(className, text) {
   `;
 }
 
+function iconCard(sceneSvg) {
+  return `
+      <svg viewBox="0 0 520 540" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <radialGradient id="cardGlow" cx="50%" cy="45%" r="60%">
+            <stop offset="0%" stop-color="#d20a2e" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#d20a2e" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="accentFill" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ff6b7a"/>
+            <stop offset="55%" stop-color="#d20a2e"/>
+            <stop offset="100%" stop-color="#ad0624"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="520" height="540" fill="#151515"/>
+        <circle cx="260" cy="270" r="230" fill="url(#cardGlow)"/>
+
+        ${sceneSvg}
+      </svg>
+  `;
+}
+
 const whyUsScene = `
-        <g class="why-orbit">
-          <circle class="gfx-signal" cx="260" cy="25" r="4" fill="var(--red)" style="animation-delay:0s"/>
-          <circle cx="332.7" cy="39.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="394.4" cy="80.6" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="435.5" cy="142.3" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle class="gfx-signal" cx="450" cy="215" r="4" fill="var(--red)" style="animation-delay:0.65s"/>
-          <circle cx="435.5" cy="287.7" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="394.4" cy="349.4" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="332.7" cy="390.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle class="gfx-signal" cx="260" cy="405" r="4" fill="var(--red)" style="animation-delay:1.3s"/>
-          <circle cx="187.3" cy="390.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="125.6" cy="349.4" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="84.5" cy="287.7" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle class="gfx-signal" cx="70" cy="215" r="4" fill="var(--red)" style="animation-delay:1.95s"/>
-          <circle cx="84.5" cy="142.3" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="125.6" cy="80.6" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
-          <circle cx="187.3" cy="39.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+        <circle cx="260" cy="270" r="175" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="3"/>
+        <circle cx="260" cy="270" r="150" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+
+        <line x1="260.0" y1="112.0" x2="260.0" y2="95.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="339.0" y1="133.2" x2="347.5" y2="118.4" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="396.8" y1="191.0" x2="411.6" y2="182.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="418.0" y1="270.0" x2="435.0" y2="270.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="396.8" y1="349.0" x2="411.6" y2="357.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="339.0" y1="406.8" x2="347.5" y2="421.6" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="260.0" y1="428.0" x2="260.0" y2="445.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="181.0" y1="406.8" x2="172.5" y2="421.6" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="123.2" y1="349.0" x2="108.4" y2="357.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="102.0" y1="270.0" x2="85.0" y2="270.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="123.2" y1="191.0" x2="108.4" y2="182.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <line x1="181.0" y1="133.2" x2="172.5" y2="118.4" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+
+        <line x1="260" y1="270" x2="215" y2="325" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+        <g class="clock-minute">
+          <line x1="260" y1="270" x2="260" y2="128" stroke="url(#accentFill)" stroke-width="11" stroke-linecap="round"/>
         </g>
+        <circle cx="260" cy="270" r="11" fill="var(--red)"/>
 `;
 
 const aboutScene = `
-        <g fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round">
-          <path class="about-path" d="M90 520 L150 460 L120 400 L210 360 L260 330"/>
+        <circle cx="260" cy="240" r="140" fill="url(#accentFill)"/>
+        <circle cx="260" cy="240" r="116" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+
+        <path d="M235 340 L265 340 L265 462 L250 440 L235 462 Z" fill="#ad0624"/>
+        <path d="M255 340 L285 340 L285 462 L270 440 L255 462 Z" fill="var(--red)"/>
+
+        <path d="M205 240 L242 278 L318 190" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <clipPath id="sealClip">
+          <circle cx="260" cy="240" r="140"/>
+        </clipPath>
+        <g clip-path="url(#sealClip)">
+          <rect class="seal-shine" x="-40" y="60" width="70" height="360" fill="#ffffff" fill-opacity="0.3" transform="rotate(22 260 240)"/>
         </g>
-        <circle cx="90" cy="520" r="5" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="150" cy="460" r="5" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="120" cy="400" r="5" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="210" cy="360" r="5" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="260" cy="330" r="6" fill="var(--red)"/>
 `;
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 const careerScene = `
-        <g fill="#0b0b0b">
-          <rect x="45" y="490" width="70" height="50"/>
-          <rect x="135" y="450" width="70" height="90"/>
-          <rect x="225" y="410" width="70" height="130"/>
-          <rect x="315" y="370" width="70" height="170"/>
-          <rect x="405" y="330" width="70" height="210"/>
-        </g>
-        <circle cx="80" cy="480" r="3" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="170" cy="440" r="3" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="260" cy="400" r="3" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="350" cy="360" r="3" fill="#ffffff" fill-opacity="0.3"/>
-        <circle cx="440" cy="320" r="7" fill="var(--red)"/>
-        ${prefersReducedMotion ? "" : `
-        <circle r="7" fill="var(--red)">
-          <animateMotion dur="3.2s" repeatCount="indefinite" path="M80,480 L170,440 L260,400 L350,360 L440,320"/>
-        </circle>
-        `}
+        <path d="M240 130 L296 220 L184 220 Z" fill="url(#accentFill)"/>
+        <rect x="204" y="220" width="112" height="190" rx="18" fill="var(--cream)"/>
+        <circle cx="260" cy="278" r="26" fill="#151515"/>
+        <circle cx="260" cy="278" r="26" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3"/>
+        <path d="M204 350 L160 410 L204 410 Z" fill="var(--red)"/>
+        <path d="M316 350 L360 410 L316 410 Z" fill="var(--red)"/>
+
+        <path class="rocket-flame" d="M232 410 L260 480 L288 410 Z" fill="url(#accentFill)"/>
+
+        <circle class="rocket-spark" cx="245" cy="460" r="5" fill="var(--red)" style="animation-delay:0s"/>
+        <circle class="rocket-spark" cx="275" cy="465" r="4" fill="#ffffff" fill-opacity="0.6" style="animation-delay:0.5s"/>
+        <circle class="rocket-spark" cx="260" cy="470" r="5" fill="var(--red)" style="animation-delay:1s"/>
+        <circle class="rocket-spark" cx="230" cy="475" r="3" fill="#ffffff" fill-opacity="0.6" style="animation-delay:1.5s"/>
 `;
 
 const contactScene = `
-        <path class="contact-arc" d="M210 470 A 50 50 0 0 1 310 470" fill="none" stroke="#ffffff" stroke-width="2" style="animation-delay:0s"/>
-        <path class="contact-arc" d="M170 470 A 90 90 0 0 1 350 470" fill="none" stroke="#ffffff" stroke-width="2" style="animation-delay:0.4s"/>
-        <path class="contact-arc" d="M130 470 A 130 130 0 0 1 390 470" fill="none" stroke="#ffffff" stroke-width="2" style="animation-delay:0.8s"/>
-        <circle cx="260" cy="470" r="8" fill="var(--red)"/>
+        <path class="contact-arc" d="M210 250 A 50 50 0 0 1 310 250" fill="none" stroke="#ffffff" stroke-width="3" style="animation-delay:0s"/>
+        <path class="contact-arc" d="M175 250 A 85 85 0 0 1 345 250" fill="none" stroke="#ffffff" stroke-width="3" style="animation-delay:0.4s"/>
+        <path class="contact-arc" d="M140 250 A 120 120 0 0 1 380 250" fill="none" stroke="#ffffff" stroke-width="3" style="animation-delay:0.8s"/>
+
+        <rect x="190" y="250" width="140" height="260" rx="26" fill="#1c1c1c" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+        <rect x="210" y="278" width="100" height="170" rx="10" fill="url(#accentFill)"/>
+        <rect x="245" y="465" width="30" height="6" rx="3" fill="#ffffff" fill-opacity="0.4"/>
+        <g transform="rotate(-30 260 363)">
+          <rect x="242" y="303" width="36" height="120" rx="18" fill="#ffffff"/>
+          <circle cx="260" cy="308" r="22" fill="#ffffff"/>
+          <circle cx="260" cy="418" r="22" fill="#ffffff"/>
+        </g>
 `;
 
 function renderWhyUsMain(t) {
@@ -703,7 +737,7 @@ function renderWhyUsMain(t) {
           <div class="why-grid">
 
             <div class="why-visual gfx-visual">
-              ${shieldEmblem(whyUsScene)}
+              ${iconCard(whyUsScene)}
               ${gfxBadge("gfx-badge", t.whyUs.badgeLabel)}
             </div>
 
@@ -748,7 +782,7 @@ function renderAboutMain(t) {
           <div class="about-grid">
 
             <div class="about-visual gfx-visual">
-              ${shieldEmblem(aboutScene)}
+              ${iconCard(aboutScene)}
               ${gfxBadge("gfx-badge", t.about.badgeLabel)}
             </div>
 
@@ -794,7 +828,7 @@ function renderCareerMain(t) {
         <div class="container career-inner">
 
           <div class="career-visual gfx-visual">
-            ${shieldEmblem(careerScene)}
+            ${iconCard(careerScene)}
             ${gfxBadge("gfx-badge", t.career.badgeLabel)}
           </div>
 
@@ -844,7 +878,7 @@ function renderContactMain(t) {
         <div class="container contact-inner">
 
           <div class="contact-visual gfx-visual">
-            ${shieldEmblem(contactScene)}
+            ${iconCard(contactScene)}
             ${gfxBadge("gfx-badge", t.contact.badgeLabel)}
           </div>
 
