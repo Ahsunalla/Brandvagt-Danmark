@@ -446,8 +446,7 @@ function renderHomeMain(t) {
               <circle cx="260" cy="215" r="220" fill="url(#shieldGlow)"/>
               <circle class="intro-ring" cx="260" cy="215" r="155" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
               <circle class="intro-ring" cx="260" cy="215" r="108" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
-              <circle class="intro-heartbeat" cx="260" cy="215" r="60" fill="none" stroke="var(--red)" stroke-width="2"/>
-              <circle class="intro-heartbeat" cx="260" cy="215" r="60" fill="none" stroke="var(--red)" stroke-width="2" style="animation-delay:0.35s"/>
+              <circle class="intro-heartbeat" cx="260" cy="215" r="110" fill="url(#shieldGlow)"/>
 
               <path d="M260 85 L342 114 V208 C342 270 306 313 260 332 C214 313 178 270 178 208 V114 Z" fill="url(#shieldFill)"/>
               <rect x="248" y="136" width="24" height="132" fill="#fff"/>
