@@ -333,14 +333,6 @@ function renderCallFab(t) {
 function renderHomeMain(t) {
   return `
       <section class="hero">
-        <div class="hero-photo-bg case-carousel" aria-hidden="true">
-          <img src="/assets/case-hjm-recycling.jpg" alt="" class="case-photo is-active" />
-          <img src="/assets/case-egedal-kommune.jpg" alt="" class="case-photo" />
-          <img src="/assets/case-arla.jpg" alt="" class="case-photo photo-arla" />
-        </div>
-
-        <div class="hero-photo-overlay" aria-hidden="true"></div>
-
         <div class="hero-background" aria-hidden="true">
           <span class="radar-sweep"></span>
           <span class="radar-pulse"></span>
@@ -414,12 +406,6 @@ function renderHomeMain(t) {
 
         </div>
 
-        <div class="hero-photo-dots case-dots" aria-hidden="true">
-          <span class="case-dot is-active"></span>
-          <span class="case-dot"></span>
-          <span class="case-dot"></span>
-        </div>
-
         <div class="hero-scroll">
           <span>${t.hero.scroll}</span>
           <div class="scroll-line"></div>
@@ -429,26 +415,7 @@ function renderHomeMain(t) {
 
       <!-- INTRO -->
       <section class="intro section">
-        <div class="container intro-grid">
-
-          <div class="case-visual case-carousel">
-            <img src="/assets/case-hjm-recycling.jpg" alt="Brandvagt på vagt hos HJM Recycling" class="case-photo is-active" data-caption="${t.about.caseCaption}" />
-            <img src="/assets/case-egedal-kommune.jpg" alt="Brandvagt i aktion for Egedal Kommune" class="case-photo" data-caption="${t.about.caseCaption2}" />
-            <img src="/assets/case-arla.jpg" alt="Brandvagt ved varmt arbejde hos Arla" class="case-photo photo-arla" data-caption="${t.about.caseCaption3}" />
-
-            <div class="case-caption">${t.about.caseCaption}</div>
-
-            <div class="case-dots" aria-hidden="true">
-              <span class="case-dot is-active"></span>
-              <span class="case-dot"></span>
-              <span class="case-dot"></span>
-            </div>
-
-            <div class="case-box">
-              <span class="large-number">24</span>
-              <span class="number-label">${t.about.numberLabel}</span>
-            </div>
-          </div>
+        <div class="container">
 
           <div class="intro-content">
             <div class="section-label">
@@ -905,63 +872,6 @@ function mount(lang) {
   /* RADAR DETECTION SPOT (home page only, desktop only, moves on its own) */
 
   syncRadarPosition();
-
-
-  /* CASE-PHOTO CAROUSELS (home page only, one per .case-carousel root) */
-
-  document.querySelectorAll(".case-carousel").forEach((root) => setupCaseCarousel(root));
-}
-
-
-function setupCaseCarousel(root) {
-  const photos = Array.from(root.querySelectorAll(".case-photo"));
-  const captionEl = root.querySelector(".case-caption");
-  const dots = Array.from(root.parentElement.querySelectorAll(".case-dot"));
-  if (photos.length < 2) return;
-
-  let timer = null;
-  let index = 0;
-  const DURATION = 3200;
-
-  function activate(nextIndex) {
-    photos[index].classList.remove("is-active");
-    if (dots[index]) dots[index].classList.remove("is-active");
-
-    const next = photos[nextIndex];
-    next.style.transition = "none";
-    next.style.transform = "scale(1)";
-    void next.offsetWidth;
-    next.style.transition = "";
-    next.style.transform = "";
-    next.classList.add("is-active");
-    if (dots[nextIndex]) dots[nextIndex].classList.add("is-active");
-
-    if (captionEl) {
-      captionEl.style.opacity = "0";
-      setTimeout(() => {
-        captionEl.textContent = next.dataset.caption || "";
-        captionEl.style.opacity = "1";
-      }, 250);
-    }
-
-    index = nextIndex;
-  }
-
-  function start() {
-    if (timer) clearInterval(timer);
-    timer = setInterval(() => {
-      activate((index + 1) % photos.length);
-    }, DURATION);
-  }
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      activate(i);
-      start();
-    });
-  });
-
-  start();
 }
 
 
