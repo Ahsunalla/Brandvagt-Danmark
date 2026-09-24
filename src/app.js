@@ -435,8 +435,8 @@ function renderHomeMain(t) {
                   <stop offset="100%" stop-color="#d20a2e" stop-opacity="0"/>
                 </radialGradient>
                 <radialGradient id="heartbeatGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#ff2d4d" stop-opacity="0.9"/>
-                  <stop offset="55%" stop-color="#d20a2e" stop-opacity="0.4"/>
+                  <stop offset="0%" stop-color="#ff2d4d" stop-opacity="0.7"/>
+                  <stop offset="55%" stop-color="#d20a2e" stop-opacity="0.3"/>
                   <stop offset="100%" stop-color="#d20a2e" stop-opacity="0"/>
                 </radialGradient>
                 <linearGradient id="shieldFill" x1="0%" y1="0%" x2="0%" y2="100%">
