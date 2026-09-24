@@ -434,6 +434,11 @@ function renderHomeMain(t) {
                   <stop offset="0%" stop-color="#d20a2e" stop-opacity="0.4"/>
                   <stop offset="100%" stop-color="#d20a2e" stop-opacity="0"/>
                 </radialGradient>
+                <radialGradient id="heartbeatGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ff2d4d" stop-opacity="0.9"/>
+                  <stop offset="55%" stop-color="#d20a2e" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#d20a2e" stop-opacity="0"/>
+                </radialGradient>
                 <linearGradient id="shieldFill" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stop-color="#ff6b7a"/>
                   <stop offset="55%" stop-color="#d20a2e"/>
@@ -446,7 +451,7 @@ function renderHomeMain(t) {
               <circle cx="260" cy="215" r="220" fill="url(#shieldGlow)"/>
               <circle class="intro-ring" cx="260" cy="215" r="155" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
               <circle class="intro-ring" cx="260" cy="215" r="108" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
-              <circle class="intro-heartbeat" cx="260" cy="215" r="110" fill="url(#shieldGlow)"/>
+              <circle class="intro-heartbeat" cx="260" cy="215" r="150" fill="url(#heartbeatGlow)"/>
 
               <path d="M260 85 L342 114 V208 C342 270 306 313 260 332 C214 313 178 270 178 208 V114 Z" fill="url(#shieldFill)"/>
               <rect x="248" y="136" width="24" height="132" fill="#fff"/>
