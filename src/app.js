@@ -446,6 +446,8 @@ function renderHomeMain(t) {
               <circle cx="260" cy="215" r="220" fill="url(#shieldGlow)"/>
               <circle class="intro-ring" cx="260" cy="215" r="155" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
               <circle class="intro-ring" cx="260" cy="215" r="108" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+              <circle class="intro-heartbeat" cx="260" cy="215" r="60" fill="none" stroke="var(--red)" stroke-width="2"/>
+              <circle class="intro-heartbeat" cx="260" cy="215" r="60" fill="none" stroke="var(--red)" stroke-width="2" style="animation-delay:0.35s"/>
 
               <path d="M260 85 L342 114 V208 C342 270 306 313 260 332 C214 313 178 270 178 208 V114 Z" fill="url(#shieldFill)"/>
               <rect x="248" y="136" width="24" height="132" fill="#fff"/>
@@ -476,8 +478,6 @@ function renderHomeMain(t) {
                 <rect x="412" y="448" width="6" height="8"/>
               </g>
             </svg>
-
-            <div class="shield-radar-sweep" style="--sweep-duration:5.5s"></div>
 
             <div class="intro-visual-badge">
               <span class="intro-visual-dot"></span>
@@ -627,12 +627,8 @@ function gfxBadge(className, text) {
   `;
 }
 
-function radarSweep(duration, direction) {
-  return `<div class="shield-radar-sweep" style="--sweep-duration:${duration};--sweep-direction:${direction || "normal"}"></div>`;
-}
-
 const whyUsScene = `
-        <g>
+        <g class="why-orbit">
           <circle class="gfx-signal" cx="260" cy="25" r="4" fill="var(--red)" style="animation-delay:0s"/>
           <circle cx="332.7" cy="39.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
           <circle cx="394.4" cy="80.6" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
@@ -654,14 +650,16 @@ const whyUsScene = `
 
 const aboutScene = `
         <g fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round">
-          <path d="M90 520 L150 460 L120 400 L210 360 L260 330"/>
+          <path class="about-path" d="M90 520 L150 460 L120 400 L210 360 L260 330"/>
         </g>
         <circle cx="90" cy="520" r="5" fill="#ffffff" fill-opacity="0.3"/>
         <circle cx="150" cy="460" r="5" fill="#ffffff" fill-opacity="0.3"/>
         <circle cx="120" cy="400" r="5" fill="#ffffff" fill-opacity="0.3"/>
         <circle cx="210" cy="360" r="5" fill="#ffffff" fill-opacity="0.3"/>
-        <circle class="gfx-signal" cx="260" cy="330" r="6" fill="var(--red)"/>
+        <circle cx="260" cy="330" r="6" fill="var(--red)"/>
 `;
+
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const careerScene = `
         <g fill="#0b0b0b">
@@ -672,21 +670,21 @@ const careerScene = `
           <rect x="405" y="330" width="70" height="210"/>
         </g>
         <circle cx="80" cy="480" r="3" fill="#ffffff" fill-opacity="0.3"/>
-        <circle class="gfx-signal" cx="170" cy="440" r="4" fill="var(--red)" style="animation-delay:0s"/>
+        <circle cx="170" cy="440" r="3" fill="#ffffff" fill-opacity="0.3"/>
         <circle cx="260" cy="400" r="3" fill="#ffffff" fill-opacity="0.3"/>
-        <circle class="gfx-signal" cx="350" cy="360" r="4" fill="var(--red)" style="animation-delay:0.7s"/>
-        <circle class="gfx-signal" cx="440" cy="318" r="5" fill="var(--red)" style="animation-delay:1.4s"/>
+        <circle cx="350" cy="360" r="3" fill="#ffffff" fill-opacity="0.3"/>
+        <circle cx="440" cy="320" r="7" fill="var(--red)"/>
+        ${prefersReducedMotion ? "" : `
+        <circle r="7" fill="var(--red)">
+          <animateMotion dur="3.2s" repeatCount="indefinite" path="M80,480 L170,440 L260,400 L350,360 L440,320"/>
+        </circle>
+        `}
 `;
 
 const contactScene = `
-        <g fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2">
-          <path d="M210 470 A 50 50 0 0 1 310 470"/>
-          <path d="M170 470 A 90 90 0 0 1 350 470"/>
-          <path d="M130 470 A 130 130 0 0 1 390 470"/>
-        </g>
-        <circle class="gfx-signal" cx="260" cy="420" r="4" fill="var(--red)" style="animation-delay:0s"/>
-        <circle class="gfx-signal" cx="260" cy="380" r="4" fill="var(--red)" style="animation-delay:0.6s"/>
-        <circle class="gfx-signal" cx="260" cy="340" r="4" fill="var(--red)" style="animation-delay:1.2s"/>
+        <path class="contact-arc" d="M210 470 A 50 50 0 0 1 310 470" fill="none" stroke="#ffffff" stroke-width="2" style="animation-delay:0s"/>
+        <path class="contact-arc" d="M170 470 A 90 90 0 0 1 350 470" fill="none" stroke="#ffffff" stroke-width="2" style="animation-delay:0.4s"/>
+        <path class="contact-arc" d="M130 470 A 130 130 0 0 1 390 470" fill="none" stroke="#ffffff" stroke-width="2" style="animation-delay:0.8s"/>
         <circle cx="260" cy="470" r="8" fill="var(--red)"/>
 `;
 
@@ -706,7 +704,6 @@ function renderWhyUsMain(t) {
 
             <div class="why-visual gfx-visual">
               ${shieldEmblem(whyUsScene)}
-              ${radarSweep("4s")}
               ${gfxBadge("gfx-badge", t.whyUs.badgeLabel)}
             </div>
 
@@ -752,7 +749,6 @@ function renderAboutMain(t) {
 
             <div class="about-visual gfx-visual">
               ${shieldEmblem(aboutScene)}
-              ${radarSweep("7s")}
               ${gfxBadge("gfx-badge", t.about.badgeLabel)}
             </div>
 
@@ -799,7 +795,6 @@ function renderCareerMain(t) {
 
           <div class="career-visual gfx-visual">
             ${shieldEmblem(careerScene)}
-            ${radarSweep("3.5s")}
             ${gfxBadge("gfx-badge", t.career.badgeLabel)}
           </div>
 
@@ -850,7 +845,6 @@ function renderContactMain(t) {
 
           <div class="contact-visual gfx-visual">
             ${shieldEmblem(contactScene)}
-            ${radarSweep("3s", "reverse")}
             ${gfxBadge("gfx-badge", t.contact.badgeLabel)}
           </div>
 
