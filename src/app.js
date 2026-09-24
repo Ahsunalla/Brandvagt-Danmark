@@ -51,6 +51,7 @@ const translations = {
       h2a: "Mere end en",
       h2b: "brandvagt.",
       p: "Vi mener, at god sikkerhed starter med ansvar, opmærksomhed og mennesker, du kan stole på.",
+      badgeLabel: "Pålidelig 24/7",
       benefits: [
         { title: "Professionelle mennesker", desc: "Vi møder op forberedte, professionelle og klar til at tage ansvar." },
         { title: "Fokus på forebyggelse", desc: "Vi arbejder ikke kun med at opdage problemer. Vi arbejder for at forhindre dem." },
@@ -68,7 +69,8 @@ const translations = {
       numberLabel: "timer",
       caseCaption: "Hos HJM Recycling",
       caseCaption2: "Hos Egedal Kommune",
-      caseCaption3: "Hos Arla"
+      caseCaption3: "Hos Arla",
+      badgeLabel: "Bygget på tillid"
     },
     career: {
       label: "KARRIERE",
@@ -78,7 +80,8 @@ const translations = {
       p: "Vi er altid på udkig efter ansvarsbevidste folk, der tager sikkerhed seriøst. Send din ansøgning, så vender vi hurtigt tilbage.",
       cardTitle: "Send os din ansøgning.",
       cardP: "Skriv lidt om dig selv, og hvorfor du vil være brandvagt hos os.",
-      applyBtn: "Send ansøgning"
+      applyBtn: "Send ansøgning",
+      badgeLabel: "Bliv en del af holdet"
     },
     contact: {
       label: "KONTAKT",
@@ -89,7 +92,8 @@ const translations = {
       cardTitleA: "Din sikkerhed",
       cardTitleB: "starter her.",
       cardP: "Kontakt os i dag for en uforpligtende snak om, hvordan vi kan hjælpe.",
-      callBtn: "Ring til os"
+      callBtn: "Ring til os",
+      badgeLabel: "Vi svarer hurtigt"
     },
     footer: {
       taglineA: "Professionel brandvagt.",
@@ -149,6 +153,7 @@ const translations = {
       h2a: "More than a",
       h2b: "fire watch.",
       p: "We believe good security starts with responsibility, attentiveness and people you can trust.",
+      badgeLabel: "Reliable 24/7",
       benefits: [
         { title: "Professional people", desc: "We show up prepared, professional and ready to take responsibility." },
         { title: "Focus on prevention", desc: "We don't just work to detect problems. We work to prevent them." },
@@ -166,7 +171,8 @@ const translations = {
       numberLabel: "hours",
       caseCaption: "At HJM Recycling",
       caseCaption2: "For Egedal Kommune",
-      caseCaption3: "At Arla"
+      caseCaption3: "At Arla",
+      badgeLabel: "Built on trust"
     },
     career: {
       label: "CAREERS",
@@ -176,7 +182,8 @@ const translations = {
       p: "We're always looking for responsible people who take safety seriously. Send your application and we'll get back to you quickly.",
       cardTitle: "Send us your application.",
       cardP: "Tell us a bit about yourself, and why you'd like to work with us.",
-      applyBtn: "Send application"
+      applyBtn: "Send application",
+      badgeLabel: "Join the team"
     },
     contact: {
       label: "CONTACT",
@@ -187,7 +194,8 @@ const translations = {
       cardTitleA: "Your safety",
       cardTitleB: "starts here.",
       cardP: "Contact us today for a no-obligation chat about how we can help.",
-      callBtn: "Call us"
+      callBtn: "Call us",
+      badgeLabel: "We respond fast"
     },
     footer: {
       taglineA: "Professional fire watch.",
@@ -578,6 +586,104 @@ function renderServicesMain(t) {
   `;
 }
 
+function shieldEmblem(sceneSvg) {
+  return `
+      <svg viewBox="0 0 520 540" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <radialGradient id="shieldGlow" cx="50%" cy="40%" r="55%">
+            <stop offset="0%" stop-color="#d20a2e" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#d20a2e" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="shieldFill" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ff6b7a"/>
+            <stop offset="55%" stop-color="#d20a2e"/>
+            <stop offset="100%" stop-color="#ad0624"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="520" height="540" fill="#151515"/>
+
+        <circle cx="260" cy="215" r="220" fill="url(#shieldGlow)"/>
+        <circle class="gfx-ring" cx="260" cy="215" r="155" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+        <circle class="gfx-ring" cx="260" cy="215" r="108" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+
+        <path d="M260 85 L342 114 V208 C342 270 306 313 260 332 C214 313 178 270 178 208 V114 Z" fill="url(#shieldFill)"/>
+        <rect x="248" y="136" width="24" height="132" fill="#fff"/>
+        <rect x="204" y="180" width="112" height="24" fill="#fff"/>
+
+        ${sceneSvg}
+      </svg>
+  `;
+}
+
+function gfxBadge(className, text) {
+  return `
+      <div class="${className}">
+        <span class="gfx-badge-dot"></span>
+        ${text}
+      </div>
+  `;
+}
+
+const whyUsScene = `
+        <g>
+          <circle class="gfx-signal" cx="260" cy="25" r="4" fill="var(--red)" style="animation-delay:0s"/>
+          <circle cx="332.7" cy="39.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="394.4" cy="80.6" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="435.5" cy="142.3" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle class="gfx-signal" cx="450" cy="215" r="4" fill="var(--red)" style="animation-delay:0.65s"/>
+          <circle cx="435.5" cy="287.7" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="394.4" cy="349.4" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="332.7" cy="390.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle class="gfx-signal" cx="260" cy="405" r="4" fill="var(--red)" style="animation-delay:1.3s"/>
+          <circle cx="187.3" cy="390.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="125.6" cy="349.4" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="84.5" cy="287.7" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle class="gfx-signal" cx="70" cy="215" r="4" fill="var(--red)" style="animation-delay:1.95s"/>
+          <circle cx="84.5" cy="142.3" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="125.6" cy="80.6" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+          <circle cx="187.3" cy="39.5" r="2.5" fill="#ffffff" fill-opacity="0.22"/>
+        </g>
+`;
+
+const aboutScene = `
+        <g fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round">
+          <path d="M90 520 L150 460 L120 400 L210 360 L260 330"/>
+        </g>
+        <circle cx="90" cy="520" r="5" fill="#ffffff" fill-opacity="0.3"/>
+        <circle cx="150" cy="460" r="5" fill="#ffffff" fill-opacity="0.3"/>
+        <circle cx="120" cy="400" r="5" fill="#ffffff" fill-opacity="0.3"/>
+        <circle cx="210" cy="360" r="5" fill="#ffffff" fill-opacity="0.3"/>
+        <circle class="gfx-signal" cx="260" cy="330" r="6" fill="var(--red)"/>
+`;
+
+const careerScene = `
+        <g fill="#0b0b0b">
+          <rect x="45" y="490" width="70" height="50"/>
+          <rect x="135" y="450" width="70" height="90"/>
+          <rect x="225" y="410" width="70" height="130"/>
+          <rect x="315" y="370" width="70" height="170"/>
+          <rect x="405" y="330" width="70" height="210"/>
+        </g>
+        <circle cx="80" cy="480" r="3" fill="#ffffff" fill-opacity="0.3"/>
+        <circle class="gfx-signal" cx="170" cy="440" r="4" fill="var(--red)" style="animation-delay:0s"/>
+        <circle cx="260" cy="400" r="3" fill="#ffffff" fill-opacity="0.3"/>
+        <circle class="gfx-signal" cx="350" cy="360" r="4" fill="var(--red)" style="animation-delay:0.7s"/>
+        <circle class="gfx-signal" cx="440" cy="318" r="5" fill="var(--red)" style="animation-delay:1.4s"/>
+`;
+
+const contactScene = `
+        <g fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2">
+          <path d="M210 470 A 50 50 0 0 1 310 470"/>
+          <path d="M170 470 A 90 90 0 0 1 350 470"/>
+          <path d="M130 470 A 130 130 0 0 1 390 470"/>
+        </g>
+        <circle class="gfx-signal" cx="260" cy="420" r="4" fill="var(--red)" style="animation-delay:0s"/>
+        <circle class="gfx-signal" cx="260" cy="380" r="4" fill="var(--red)" style="animation-delay:0.6s"/>
+        <circle class="gfx-signal" cx="260" cy="340" r="4" fill="var(--red)" style="animation-delay:1.2s"/>
+        <circle cx="260" cy="470" r="8" fill="var(--red)"/>
+`;
+
 function renderWhyUsMain(t) {
   return `
       <!-- WHY US -->
@@ -592,26 +698,35 @@ function renderWhyUsMain(t) {
 
           <div class="why-grid">
 
-            <div class="why-title">
-              <h2>
-                ${t.whyUs.h2a}
-                <span>${t.whyUs.h2b}</span>
-              </h2>
-
-              <p>${t.whyUs.p}</p>
+            <div class="why-visual gfx-visual">
+              ${shieldEmblem(whyUsScene)}
+              ${gfxBadge("gfx-badge", t.whyUs.badgeLabel)}
             </div>
 
+            <div class="why-body">
 
-            <div class="benefits">
-              ${t.whyUs.benefits.map((b, i) => `
-              <div class="benefit">
-                <div class="benefit-icon">0${i + 1}</div>
-                <div>
-                  <h3>${b.title}</h3>
-                  <p>${b.desc}</p>
-                </div>
+              <div class="why-title">
+                <h2>
+                  ${t.whyUs.h2a}
+                  <span>${t.whyUs.h2b}</span>
+                </h2>
+
+                <p>${t.whyUs.p}</p>
               </div>
-              `).join("")}
+
+
+              <div class="benefits">
+                ${t.whyUs.benefits.map((b, i) => `
+                <div class="benefit">
+                  <div class="benefit-icon">0${i + 1}</div>
+                  <div>
+                    <h3>${b.title}</h3>
+                    <p>${b.desc}</p>
+                  </div>
+                </div>
+                `).join("")}
+              </div>
+
             </div>
 
           </div>
@@ -626,30 +741,39 @@ function renderAboutMain(t) {
       <section class="about section" id="about">
         <div class="container">
 
-          <div class="about-content">
+          <div class="about-grid">
 
-            <div class="section-label">
-              <span>03</span>
-              <span class="label-line"></span>
-              <span>${t.about.label}</span>
+            <div class="about-visual gfx-visual">
+              ${shieldEmblem(aboutScene)}
+              ${gfxBadge("gfx-badge", t.about.badgeLabel)}
             </div>
 
-            <h2>
-              ${t.about.h2a}
-              <span>${t.about.h2b}</span>
-            </h2>
+            <div class="about-content">
 
-            <p>${t.about.p1}</p>
-
-            <p>${t.about.p2}</p>
-
-            <div class="about-points">
-              ${t.about.points.map((point) => `
-              <div>
-                <span>✓</span>
-                ${point}
+              <div class="section-label">
+                <span>03</span>
+                <span class="label-line"></span>
+                <span>${t.about.label}</span>
               </div>
-              `).join("")}
+
+              <h2>
+                ${t.about.h2a}
+                <span>${t.about.h2b}</span>
+              </h2>
+
+              <p>${t.about.p1}</p>
+
+              <p>${t.about.p2}</p>
+
+              <div class="about-points">
+                ${t.about.points.map((point) => `
+                <div>
+                  <span>✓</span>
+                  ${point}
+                </div>
+                `).join("")}
+              </div>
+
             </div>
 
           </div>
@@ -665,33 +789,42 @@ function renderCareerMain(t) {
       <section class="career section" id="career">
         <div class="container career-inner">
 
-          <div class="career-copy">
-            <div class="section-label">
-              <span>04</span>
-              <span class="label-line"></span>
-              <span>${t.career.label}</span>
-            </div>
-
-            <h2>
-              ${t.career.h2a}
-              <span>${t.career.h2b}</span>
-            </h2>
-
-            <p>${t.career.p}</p>
+          <div class="career-visual gfx-visual">
+            ${shieldEmblem(careerScene)}
+            ${gfxBadge("gfx-badge", t.career.badgeLabel)}
           </div>
 
-          <div class="career-card">
-            <h3>${t.career.cardTitle}</h3>
-            <p>${t.career.cardP}</p>
+          <div class="career-body">
 
-            <a href="mailto:job@brandvagtdanmark.dk?subject=Ansøgning" class="career-button">
-              ${t.career.applyBtn}
-              <span>→</span>
-            </a>
+            <div class="career-copy">
+              <div class="section-label">
+                <span>04</span>
+                <span class="label-line"></span>
+                <span>${t.career.label}</span>
+              </div>
 
-            <a href="mailto:job@brandvagtdanmark.dk" class="email-link">
-              job@brandvagtdanmark.dk
-            </a>
+              <h2>
+                ${t.career.h2a}
+                <span>${t.career.h2b}</span>
+              </h2>
+
+              <p>${t.career.p}</p>
+            </div>
+
+            <div class="career-card">
+              <h3>${t.career.cardTitle}</h3>
+              <p>${t.career.cardP}</p>
+
+              <a href="mailto:job@brandvagtdanmark.dk?subject=Ansøgning" class="career-button">
+                ${t.career.applyBtn}
+                <span>→</span>
+              </a>
+
+              <a href="mailto:job@brandvagtdanmark.dk" class="email-link">
+                job@brandvagtdanmark.dk
+              </a>
+            </div>
+
           </div>
 
         </div>
@@ -706,44 +839,53 @@ function renderContactMain(t) {
 
         <div class="container contact-inner">
 
-          <div class="contact-copy">
-            <div class="section-label light">
-              <span>05</span>
-              <span class="label-line"></span>
-              <span>${t.contact.label}</span>
-            </div>
-
-            <h2>
-              ${t.contact.h2a}
-              <span>${t.contact.h2b}</span>
-            </h2>
-
-            <p>${t.contact.p}</p>
+          <div class="contact-visual gfx-visual">
+            ${shieldEmblem(contactScene)}
+            ${gfxBadge("gfx-badge", t.contact.badgeLabel)}
           </div>
 
+          <div class="contact-body">
 
-          <div class="contact-card">
+            <div class="contact-copy">
+              <div class="section-label light">
+                <span>05</span>
+                <span class="label-line"></span>
+                <span>${t.contact.label}</span>
+              </div>
 
-            <div class="contact-card-top">
-              <span>${t.contact.cardTop1}</span>
-              <span>01 / 01</span>
+              <h2>
+                ${t.contact.h2a}
+                <span>${t.contact.h2b}</span>
+              </h2>
+
+              <p>${t.contact.p}</p>
             </div>
 
-            <h3>
-              ${t.contact.cardTitleA}
-              ${t.contact.cardTitleB}
-            </h3>
 
-            <p>${t.contact.cardP}</p>
+            <div class="contact-card">
 
-            <a href="tel:+4581945076" class="contact-button">
-              ${t.contact.callBtn}
-              <span>→</span>
-            </a>
+              <div class="contact-card-top">
+                <span>${t.contact.cardTop1}</span>
+                <span>01 / 01</span>
+              </div>
 
-            <a href="mailto:kontakt@brandvagtdanmark.dk" class="email-link">
-              kontakt@brandvagtdanmark.dk
-            </a>
+              <h3>
+                ${t.contact.cardTitleA}
+                ${t.contact.cardTitleB}
+              </h3>
+
+              <p>${t.contact.cardP}</p>
+
+              <a href="tel:+4581945076" class="contact-button">
+                ${t.contact.callBtn}
+                <span>→</span>
+              </a>
+
+              <a href="mailto:kontakt@brandvagtdanmark.dk" class="email-link">
+                kontakt@brandvagtdanmark.dk
+              </a>
+
+            </div>
 
           </div>
 
