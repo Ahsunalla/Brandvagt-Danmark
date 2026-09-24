@@ -655,27 +655,24 @@ function iconCard(sceneSvg) {
 }
 
 const whyUsScene = `
-        <circle cx="260" cy="270" r="175" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="3"/>
-        <circle cx="260" cy="270" r="150" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+        <rect x="170" y="90" width="180" height="380" rx="16" fill="var(--cream)"/>
+        <rect x="228" y="72" width="64" height="32" rx="10" fill="#0b0b0b"/>
 
-        <line x1="260.0" y1="112.0" x2="260.0" y2="95.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="339.0" y1="133.2" x2="347.5" y2="118.4" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="396.8" y1="191.0" x2="411.6" y2="182.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="418.0" y1="270.0" x2="435.0" y2="270.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="396.8" y1="349.0" x2="411.6" y2="357.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="339.0" y1="406.8" x2="347.5" y2="421.6" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="260.0" y1="428.0" x2="260.0" y2="445.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="181.0" y1="406.8" x2="172.5" y2="421.6" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="123.2" y1="349.0" x2="108.4" y2="357.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="102.0" y1="270.0" x2="85.0" y2="270.0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="123.2" y1="191.0" x2="108.4" y2="182.5" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
-        <line x1="181.0" y1="133.2" x2="172.5" y2="118.4" stroke="#ffffff" stroke-opacity="0.4" stroke-width="4" stroke-linecap="round"/>
+        <rect x="205" y="150" width="32" height="32" rx="7" fill="none" stroke="#151515" stroke-opacity="0.55" stroke-width="3"/>
+        <path class="check-mark" d="M211 167 L218 174 L231 158" fill="none" stroke="var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0s"/>
+        <rect x="252" y="161" width="108" height="10" rx="5" fill="#151515" fill-opacity="0.28"/>
 
-        <line x1="260" y1="270" x2="215" y2="325" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
-        <g class="clock-minute">
-          <line x1="260" y1="270" x2="260" y2="128" stroke="url(#accentFill)" stroke-width="11" stroke-linecap="round"/>
-        </g>
-        <circle cx="260" cy="270" r="11" fill="var(--red)"/>
+        <rect x="205" y="230" width="32" height="32" rx="7" fill="none" stroke="#151515" stroke-opacity="0.55" stroke-width="3"/>
+        <path class="check-mark" d="M211 247 L218 254 L231 238" fill="none" stroke="var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:0.5s"/>
+        <rect x="252" y="241" width="108" height="10" rx="5" fill="#151515" fill-opacity="0.28"/>
+
+        <rect x="205" y="310" width="32" height="32" rx="7" fill="none" stroke="#151515" stroke-opacity="0.55" stroke-width="3"/>
+        <path class="check-mark" d="M211 327 L218 334 L231 318" fill="none" stroke="var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:1s"/>
+        <rect x="252" y="321" width="108" height="10" rx="5" fill="#151515" fill-opacity="0.28"/>
+
+        <rect x="205" y="390" width="32" height="32" rx="7" fill="none" stroke="#151515" stroke-opacity="0.55" stroke-width="3"/>
+        <path class="check-mark" d="M211 407 L218 414 L231 398" fill="none" stroke="var(--red)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:1.5s"/>
+        <rect x="252" y="401" width="108" height="10" rx="5" fill="#151515" fill-opacity="0.28"/>
 `;
 
 const aboutScene = `

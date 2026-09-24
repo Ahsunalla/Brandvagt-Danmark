@@ -1323,14 +1323,17 @@ button {
   animation: intro-badge-blink 1.6s ease-in-out infinite;
 }
 
-.clock-minute {
-  transform-box: view-box;
-  transform-origin: 260px 270px;
-  animation: clock-sweep 18s linear infinite;
+.check-mark {
+  stroke-dasharray: 32;
+  stroke-dashoffset: 32;
+  animation: check-draw 3s ease-in-out infinite;
 }
 
-@keyframes clock-sweep {
-  to { transform: rotate(360deg); }
+@keyframes check-draw {
+  0%   { stroke-dashoffset: 32; }
+  18%  { stroke-dashoffset: 0; }
+  75%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 32; }
 }
 
 .seal-shine {
@@ -1377,12 +1380,16 @@ button {
 @media (prefers-reduced-motion: reduce) {
   .gfx-ring,
   .gfx-badge-dot,
-  .clock-minute,
   .seal-shine,
   .rocket-flame,
   .rocket-spark,
   .contact-arc {
     animation: none;
+  }
+
+  .check-mark {
+    animation: none;
+    stroke-dashoffset: 0;
   }
 }
 
