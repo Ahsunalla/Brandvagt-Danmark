@@ -23,7 +23,8 @@ const translations = {
       h2b: "du ikke har råd til at miste.",
       p1: "Brand handler ikke kun om at reagere. Det handler om at være til stede, før noget går galt.",
       p2: "Hos Brandvagt Danmark leverer vi professionelle brandvagter, der skaber tryghed, overblik og sikkerhed på arbejdspladser, byggepladser og ved arrangementer.",
-      link: "Lær mere om os"
+      link: "Lær mere om os",
+      watchLabel: "Altid på vagt"
     },
     services: {
       label: "VORES YDELSER",
@@ -120,7 +121,8 @@ const translations = {
       h2b: "you can't afford to lose.",
       p1: "Fire safety isn't just about reacting. It's about being present before anything goes wrong.",
       p2: "At Brandvagt Danmark, we provide professional fire watch guards who create safety, oversight and security at workplaces, construction sites and events.",
-      link: "Learn more about us"
+      link: "Learn more about us",
+      watchLabel: "Always on watch"
     },
     services: {
       label: "OUR SERVICES",
@@ -415,7 +417,63 @@ function renderHomeMain(t) {
 
       <!-- INTRO -->
       <section class="intro section">
-        <div class="container">
+        <div class="container intro-grid">
+
+          <div class="intro-visual">
+            <svg viewBox="0 0 520 540" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <radialGradient id="shieldGlow" cx="50%" cy="40%" r="55%">
+                  <stop offset="0%" stop-color="#d20a2e" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#d20a2e" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="shieldFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ff6b7a"/>
+                  <stop offset="55%" stop-color="#d20a2e"/>
+                  <stop offset="100%" stop-color="#ad0624"/>
+                </linearGradient>
+              </defs>
+
+              <rect width="520" height="540" fill="#151515"/>
+
+              <circle cx="260" cy="215" r="220" fill="url(#shieldGlow)"/>
+              <circle class="intro-ring" cx="260" cy="215" r="155" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+              <circle class="intro-ring" cx="260" cy="215" r="108" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+
+              <path d="M260 85 L342 114 V208 C342 270 306 313 260 332 C214 313 178 270 178 208 V114 Z" fill="url(#shieldFill)"/>
+              <rect x="248" y="136" width="24" height="132" fill="#fff"/>
+              <rect x="204" y="180" width="112" height="24" fill="#fff"/>
+
+              <g fill="#0b0b0b">
+                <rect x="0" y="438" width="58" height="102"/>
+                <rect x="62" y="405" width="48" height="135"/>
+                <rect x="116" y="458" width="44" height="82"/>
+                <rect x="166" y="392" width="54" height="148"/>
+                <rect x="226" y="428" width="58" height="112"/>
+                <rect x="290" y="402" width="48" height="138"/>
+                <rect x="344" y="448" width="44" height="92"/>
+                <rect x="394" y="418" width="58" height="122"/>
+                <rect x="458" y="458" width="54" height="82"/>
+              </g>
+
+              <g class="intro-windows" fill="var(--red)">
+                <rect x="12" y="458" width="6" height="8"/>
+                <rect x="32" y="478" width="6" height="8"/>
+                <rect x="78" y="428" width="6" height="8"/>
+                <rect x="98" y="460" width="6" height="8"/>
+                <rect x="184" y="418" width="6" height="8"/>
+                <rect x="184" y="446" width="6" height="8"/>
+                <rect x="244" y="458" width="6" height="8"/>
+                <rect x="308" y="428" width="6" height="8"/>
+                <rect x="308" y="456" width="6" height="8"/>
+                <rect x="412" y="448" width="6" height="8"/>
+              </g>
+            </svg>
+
+            <div class="intro-visual-badge">
+              <span class="intro-visual-dot"></span>
+              ${t.intro.watchLabel}
+            </div>
+          </div>
 
           <div class="intro-content">
             <div class="section-label">
