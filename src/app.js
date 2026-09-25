@@ -693,6 +693,27 @@ const aboutScene = `
 `;
 
 const careerScene = `
+        <circle class="rocket-star" cx="185" cy="97" r="1.8" fill="#ffffff" style="animation-duration:1.9s;animation-delay:2.5s"/>
+        <circle class="rocket-star" cx="68" cy="207" r="2.1" fill="#ffffff" style="animation-duration:3.4s;animation-delay:0.6s"/>
+        <circle class="rocket-star" cx="64" cy="242" r="1.9" fill="#ffffff" style="animation-duration:2.2s;animation-delay:1.7s"/>
+        <circle class="rocket-star" cx="50" cy="83" r="2.7" fill="#ffffff" style="animation-duration:2.9s;animation-delay:1.7s"/>
+        <circle class="rocket-star" cx="51" cy="223" r="1.3" fill="#ffffff" style="animation-duration:2.2s;animation-delay:1.7s"/>
+        <circle class="rocket-star" cx="88" cy="168" r="1.9" fill="#ffffff" style="animation-duration:2.8s;animation-delay:1.7s"/>
+        <circle class="rocket-star" cx="306" cy="112" r="1.4" fill="#ffffff" style="animation-duration:2.8s;animation-delay:0.6s"/>
+        <circle class="rocket-star" cx="69" cy="300" r="2.3" fill="#ffffff" style="animation-duration:2.8s;animation-delay:1.9s"/>
+        <circle class="rocket-star" cx="274" cy="292" r="1.9" fill="#ffffff" style="animation-duration:2.4s;animation-delay:1.8s"/>
+        <circle class="rocket-star" cx="252" cy="205" r="1.7" fill="#ffffff" style="animation-duration:3.2s;animation-delay:2.1s"/>
+        <circle class="rocket-star" cx="144" cy="61" r="2.1" fill="#ffffff" style="animation-duration:2.7s;animation-delay:2.6s"/>
+        <circle class="rocket-star" cx="393" cy="249" r="1.7" fill="#ffffff" style="animation-duration:3.6s;animation-delay:0.4s"/>
+        <circle class="rocket-star" cx="234" cy="104" r="2.4" fill="#ffffff" style="animation-duration:2.1s;animation-delay:1.5s"/>
+        <circle class="rocket-star" cx="40" cy="59" r="2.4" fill="#ffffff" style="animation-duration:2.8s;animation-delay:2.6s"/>
+        <circle class="rocket-star" cx="180" cy="194" r="2.3" fill="#ffffff" style="animation-duration:2.9s;animation-delay:1.7s"/>
+        <circle class="rocket-star" cx="253" cy="55" r="2.5" fill="#ffffff" style="animation-duration:3.5s;animation-delay:1.4s"/>
+        <circle class="rocket-star" cx="360" cy="53" r="1.3" fill="#ffffff" style="animation-duration:3.1s;animation-delay:1.9s"/>
+        <circle class="rocket-star" cx="368" cy="248" r="1.7" fill="#ffffff" style="animation-duration:2.5s;animation-delay:2.0s"/>
+        <circle class="rocket-star" cx="31" cy="256" r="1.8" fill="#ffffff" style="animation-duration:2.9s;animation-delay:1.5s"/>
+        <circle class="rocket-star" cx="131" cy="167" r="1.4" fill="#ffffff" style="animation-duration:2.2s;animation-delay:1.2s"/>
+
         <path d="M260 130 L316 220 L204 220 Z" fill="url(#accentFill)"/>
         <rect x="204" y="220" width="112" height="190" rx="18" fill="var(--cream)"/>
         <circle cx="260" cy="278" r="26" fill="#151515"/>

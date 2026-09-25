@@ -1367,6 +1367,17 @@ button {
   100% { transform: translateY(-190px); opacity: 0; }
 }
 
+.rocket-star {
+  animation-name: rocket-star-twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rocket-star-twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 1; }
+}
+
 .contact-arc {
   animation: contact-arc-ripple 2.4s ease-in-out infinite;
   stroke-opacity: 0.15;
@@ -1398,6 +1409,7 @@ button {
   .seal-shine,
   .rocket-flame,
   .rocket-spark,
+  .rocket-star,
   .contact-arc,
   .phone-ring {
     animation: none;
